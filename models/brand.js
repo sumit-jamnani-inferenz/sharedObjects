@@ -40,13 +40,13 @@ const Brand = sequelize.define('Brand', {
     tableName: 'Brand'
 });
 
-Brand.associate = function (models) {
-    Brand.hasMany(models.productDiscount, {
-        foreignKey: 'brandId',
-        as: 'discounts',
-        onDelete: 'CASCADE',
-    });
-};
+// Brand.associate = function (models) {
+//     Brand.hasMany(models.productDiscount, {
+//         foreignKey: 'brandId',
+//         as: 'discounts',
+//         onDelete: 'CASCADE',
+//     });
+// };
 
 (async () => {
     await Brand.sync({ alter: true });
