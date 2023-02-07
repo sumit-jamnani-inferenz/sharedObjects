@@ -25,7 +25,6 @@ const Brand = sequelize.define('Brand', {
     brandAddress: DataTypes.STRING,
     brandWallet: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     isActive: {
         type: DataTypes.BOOLEAN,
