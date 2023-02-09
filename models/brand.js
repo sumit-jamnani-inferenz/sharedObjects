@@ -1,55 +1,52 @@
 'use strict';
-const DataTypes = require('sequelize');
+const {
+  Model,
+  DataTypes
+} = require('sequelize');
 const sequelize = require("../config/db/dbConfig");
 
-const Brand = sequelize.define('Brand', {
+module.exports = (sequelize, DataTypes) => {
+  class Brand extends Model {
+    static associate(models) {
+    }
+  }
+  Brand.init({
     brandId: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        allowNull: false,
-        primaryKey: true
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true
     },
     brandName: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     brandEmail: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     brandWebsite: DataTypes.STRING,
     brandContact: {
-        type: DataTypes.BIGINT,
-        allowNull: false
+      type: DataTypes.BIGINT,
+      allowNull: false
     },
     brandAddress: DataTypes.STRING,
     brandWallet: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     isActive: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     },
     timestamp: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     misc: DataTypes.JSON,
-}, {
+  }, {
+    sequelize,
+    modelName: 'Brand',
     tableName: 'Brand'
-});
-
-// Brand.associate = function (models) {
-//     Brand.hasMany(models.productDiscount, {
-//         foreignKey: 'brandId',
-//         as: 'discounts',
-//         onDelete: 'CASCADE',
-//     });
-// };
-
-(async () => {
-    await Brand.sync({ alter: true });
-    console.log("Brand Table Created Successfully.")
-})();
-
-module.exports = Brand;
+  });
+  return Brand;
+};
