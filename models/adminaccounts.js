@@ -44,11 +44,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountWallet: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       accountAvatar: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,

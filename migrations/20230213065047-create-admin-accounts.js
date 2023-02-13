@@ -41,11 +41,9 @@ module.exports = {
       },
       accountWallet: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       accountAvatar: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       isLoggedIn: {
         type: Sequelize.BOOLEAN,
