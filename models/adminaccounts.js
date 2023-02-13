@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       adminAccounts.belongsTo(models.Brand, {
-        foreignKey: 'branId',
+        foreignKey: 'brandId',
         as: 'brand',
         onDelete: 'CASCADE',
       })
@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       roleId: {
+        type: DataTypes.UUID,
+      },
+      brandId: {
         type: DataTypes.UUID,
       },
       accountName: {
