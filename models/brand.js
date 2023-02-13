@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Brand extends Model {
     static associate(models) {
       Brand.hasMany(models.adminAccounts, {
-        foreignKey: 'roleId',
+        foreignKey: 'brandId',
         as: 'users',
         onDelete: 'CASCADE',
       })
