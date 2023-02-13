@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       adminAccounts.belongsTo(models.Brand, {
-        foreignKey: 'roleId',
-        as: 'role',
+        foreignKey: 'branId',
+        as: 'brand',
         onDelete: 'CASCADE',
       })
     }
