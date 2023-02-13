@@ -1,57 +1,56 @@
 'use strict'
-const { Model, DataTypes } = require('sequelize')
-const sequelize = require('../config/db/dbConfig')
-
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
-  class Brand extends Model {
+  class userActivity extends Model {
     static associate(models) {
-      Brand.hasMany(models.adminAccounts, {
-        foreignKey: 'roleId',
-        as: 'users',
+      userActivity.belongsTo(models.userAccounts, {
+        foreignKey: 'accountId',
+        as: 'user',
         onDelete: 'CASCADE',
       })
     }
   }
-  Brand.init(
+  userActivity.init(
     {
-      brandId: {
+      activityId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
       },
-      brandName: {
+      accountId: {
+        type: DataTypes.UUID,
+      },
+      accountWallet: {
+        type: DataTypes.STRING,
+      },
+      blockNumber: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      brandEmail: {
+      activityType: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      brandWebsite: DataTypes.STRING,
-      brandContact: {
-        type: DataTypes.BIGINT,
+      activityTime: {
+        type: DataTypes.DATE,
         allowNull: false,
       },
-      brandAddress: DataTypes.STRING,
-      brandWallet: {
+      NFTMetadata: {
         type: DataTypes.STRING,
       },
-      isActive: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
-      timestamp: {
+      blockTimestamp: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       misc: DataTypes.JSON,
     },
     {
       sequelize,
-      modelName: 'Brand',
-      tableName: 'Brand',
+      modelName: 'userActivity',
+      tableName: 'userActivity',
     },
   )
-  return Brand
+  return userActivity
 }
