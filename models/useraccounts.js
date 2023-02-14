@@ -26,9 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       accountId: {
         allowNull: false,
-        autoIncrement: true,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        type: DataTypes.INTEGER,
       },
       roleId: {
         type: DataTypes.UUID,
