@@ -47,6 +47,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
+      accountName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      accountEmail: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       misc: DataTypes.JSON,
     },
     {
