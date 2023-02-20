@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
       allowNull: false
     },
+    brandName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     specifications: {
       type: DataTypes.STRING,
       allowNull: false

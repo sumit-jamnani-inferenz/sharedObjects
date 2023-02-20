@@ -60,6 +60,10 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false
       },
+      brandName: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
       specifications: {
         type: Sequelize.STRING,
         allowNull: false
