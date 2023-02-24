@@ -42,7 +42,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     productPrice: {
       type: DataTypes.FLOAT,
-      allowNull: false
     },
     brandName: {
       type: DataTypes.STRING,
@@ -66,7 +65,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     imageURL: {
       type: DataTypes.STRING,

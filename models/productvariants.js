@@ -27,9 +27,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
       allowNull: false
     },
-    brandName: {
-      type: DataTypes.STRING,
-    },
     price: {
       type: DataTypes.INTEGER,
       allowNull: false

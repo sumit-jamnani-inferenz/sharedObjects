@@ -23,9 +23,6 @@ module.exports = {
         type: Sequelize.JSON,
         allowNull: false
       },
-      brandName: {
-        type: Sequelize.STRING,
-      },
       price: {
         type: Sequelize.INTEGER,
         allowNull: false

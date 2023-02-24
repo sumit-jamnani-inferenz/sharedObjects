@@ -58,7 +58,6 @@ module.exports = {
       },
       productPrice: {
         type: Sequelize.FLOAT,
-        allowNull: false
       },
       brandName: {
         type: Sequelize.TEXT,
@@ -82,7 +81,6 @@ module.exports = {
       },
       quantity: {
         type: Sequelize.INTEGER,
-        allowNull: false
       },
       imageURL: {
         type: Sequelize.STRING,
