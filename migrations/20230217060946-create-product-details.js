@@ -77,7 +77,6 @@ module.exports = {
       },
       unit: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       quantity: {
         type: Sequelize.INTEGER,
