@@ -20,7 +20,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       variantValue: {
-        type: Sequelize.JSON,
+        type: Sequelize.JSONB,
         allowNull: false
       },
       price: {

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     variantValue: {
-      type: DataTypes.JSON,
+      type: DataTypes.JSONB,
       allowNull: false
     },
     price: {
