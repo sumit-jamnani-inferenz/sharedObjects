@@ -59,6 +59,9 @@ module.exports = {
       productPrice: {
         type: Sequelize.FLOAT,
       },
+      productAttributes: {
+        type: Sequelize.JSON,
+      },
       brandName: {
         type: Sequelize.TEXT,
         allowNull: false

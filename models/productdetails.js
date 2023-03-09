@@ -43,6 +43,9 @@ module.exports = (sequelize, DataTypes) => {
     productPrice: {
       type: DataTypes.FLOAT,
     },
+    productAttributes: {
+      type: DataTypes.JSON,
+    },
     brandName: {
       type: DataTypes.STRING,
       allowNull: false
