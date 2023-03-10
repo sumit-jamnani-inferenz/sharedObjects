@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   questionMaster.init({
     questionId: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true
     },
