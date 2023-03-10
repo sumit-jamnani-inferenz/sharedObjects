@@ -9,14 +9,26 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'productSKU',
         as: 'variants',
         onDelete: 'CASCADE',
-      });
+      })
+
+      productDetails.hasMany(models.userChoices, {
+        foreignKey: 'productId',
+        as: 'Choices',
+        onDelete: 'CASCADE',
+      })
     }
   }
   productDetails.init({
+    productId: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true
+    },
     productSKU: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true
+      unique: true
     },
     brandId: {
       type: DataTypes.UUID,

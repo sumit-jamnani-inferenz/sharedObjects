@@ -22,6 +22,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      accountName:
+      {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      accountEmail:
+      {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       accountWallet: {
         type: Sequelize.STRING,
       },

@@ -20,6 +20,18 @@ module.exports = (sequelize, DataTypes) => {
         as: 'userActivity',
         onDelete: 'CASCADE',
       })
+
+      userAccounts.hasMany(models.userAnswers, {
+        foreignKey: 'accountId',
+        as: 'userAnswer',
+        onDelete: 'CASCADE',
+      })
+
+      userAccounts.hasMany(models.userChoices, {
+        foreignKey: 'accountId',
+        as: 'userChoice',
+        onDelete: 'CASCADE',
+      })
     }
   }
   userAccounts.init(
@@ -37,6 +49,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      accountName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      accountEmail: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       accountWallet: {
         type: DataTypes.STRING,
       },
@@ -45,14 +65,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
-      accountName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      accountEmail: {
-        type: DataTypes.STRING,
         allowNull: false,
       },
       misc: DataTypes.JSON,
