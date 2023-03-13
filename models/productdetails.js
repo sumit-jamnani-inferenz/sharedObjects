@@ -23,11 +23,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      unique: true
     },
     productSKU: {
       type: DataTypes.STRING,
       allowNull: false,
+      primaryKey: true,
       unique: true
     },
     brandId: {
