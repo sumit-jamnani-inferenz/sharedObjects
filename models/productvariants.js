@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       productVariants.belongsTo(models.productDetails, {
         foreignKey: 'productSKU',
         as: 'product',
+        targetKey: 'v_id',
         onDelete: 'CASCADE',
       })
     }
