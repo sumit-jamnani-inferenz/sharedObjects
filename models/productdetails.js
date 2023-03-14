@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       productDetails.hasMany(models.productVariants, {
         foreignKey: 'productSKU',
         as: 'variants',
-        sourceKey: 'v_id',
+        sourceKey: 'productSKU',
         onDelete: 'CASCADE',
       })
 
