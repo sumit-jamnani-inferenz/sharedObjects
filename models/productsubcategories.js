@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       productSubCategories.belongsTo(models.productCategories, {
         foreignKey: 'productSubCategoryId',
         as: 'category',
-        targetKey: 'productSubCategoryId',
+        targetKey: 'productCategoryId',
         onDelete: 'CASCADE',
       })
     }
