@@ -7,13 +7,15 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       userAnswers.belongsTo(models.userAccounts, {
         foreignKey: 'accountId',
-        as: 'User',
+        as: 'user',
+        targetKey: 'accountId',
         onDelete: 'CASCADE',
       })
-      
+
       userAnswers.belongsTo(models.questionMaster, {
         foreignKey: 'questionId',
-        as: 'Question',
+        as: 'question',
+        targetKey: 'questionId',
         onDelete: 'CASCADE',
       })
     }

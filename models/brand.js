@@ -8,16 +8,25 @@ module.exports = (sequelize, DataTypes) => {
       Brand.hasMany(models.productDiscount, {
         foreignKey: 'brandId',
         as: 'discounts',
+        sourceKey: 'brandId',
+        onDelete: 'CASCADE',
+      });
+      Brand.hasMany(models.productDetails, {
+        foreignKey: 'brandId',
+        as: 'products',
+        sourceKey: 'brandId',
         onDelete: 'CASCADE',
       });
       Brand.hasMany(models.adminAccounts, {
         foreignKey: 'brandId',
         as: 'users',
+        sourceKey: 'brandId',
         onDelete: 'CASCADE',
       })
       Brand.hasMany(models.productCategories, {
         foreignKey: 'brandId',
         as: 'productCategories',
+        sourceKey: 'brandId',
         onDelete: 'CASCADE',
       })
     }

@@ -8,6 +8,13 @@ module.exports = (sequelize, DataTypes) => {
       productDiscount.belongsTo(models.Brand, {
         foreignKey: 'brandId',
         as: 'brand',
+        targetKey: 'brandId',
+        onDelete: 'CASCADE',
+      })
+      productDiscount.hasMany(models.productDetails, {
+        foreignKey: 'discountId',
+        as: 'products',
+        sourceKey: 'discountId',
         onDelete: 'CASCADE',
       })
     }

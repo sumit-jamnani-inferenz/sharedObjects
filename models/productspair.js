@@ -3,24 +3,30 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class userChoices extends Model {
+  class productsPair extends Model {
     static associate(models) {
-      userChoices.belongsTo(models.userAccounts, {
+      productsPair.belongsTo(models.userAccounts, {
         foreignKey: 'accountId',
         as: 'user',
         targetKey: 'accountId',
         onDelete: 'CASCADE',
       })
-      userChoices.belongsTo(models.productDetails, {
+      productsPair.belongsTo(models.productDetails, {
         foreignKey: 'productId',
         as: 'product',
         targetKey: 'productId',
         onDelete: 'CASCADE',
       })
+      productsPair.belongsTo(models.productDetails, {
+        foreignKey: 'productId',
+        as: 'pairedProductDetails',
+        targetKey: 'productId',
+        onDelete: 'CASCADE',
+      })
     }
   }
-  userChoices.init({
-    choiceId: {
+  productsPair.init({
+    pairId: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
@@ -34,15 +40,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false
     },
-    productImage: {
+    pairedProductId: {
+      type: DataTypes.UUID,
+      allowNull: false
+    },
+    productCategoryName: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    response: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    userFeedback: {
+    occasion: {
       type: DataTypes.TEXT,
       allowNull: false
     },
@@ -51,8 +57,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'userChoices',
-    tableName: 'userChoices'
+    modelName: 'productsPair',
+    tableName: 'productsPair'
   });
-  return userChoices;
+  return productsPair;
 };

@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: 'productCategoryId',
         onDelete: 'CASCADE',
       })
+      productSubCategories.hasMany(models.productDetails, {
+        foreignKey: 'productSubCategoryId',
+        as: 'products',
+        sourceKey: 'productSubCategoryId',
+        onDelete: 'CASCADE',
+      })
     }
   }
   productSubCategories.init({

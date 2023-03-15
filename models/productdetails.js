@@ -5,21 +5,52 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class productDetails extends Model {
     static associate(models) {
-      productDetails.hasMany(models.productVariants, {
-        foreignKey: 'productSKU',
-        as: 'variants',
-        sourceKey: 'productSKU',
-        onDelete: 'CASCADE',
-      })
-      productDetails.hasMany(models.userChoices, {
-        foreignKey: 'productId',
-        as: 'Choices',
+      productDetails.belongsTo(models.Brand, {
+        foreignKey: 'brandId',
+        as: 'brand',
+        targetKey: 'brandId',
         onDelete: 'CASCADE',
       })
       productDetails.belongsTo(models.productCategories, {
         foreignKey: 'productCategoryId',
         as: 'category',
         targetKey: 'productCategoryId',
+        onDelete: 'CASCADE',
+      })
+      productDetails.belongsTo(models.productSubCategories, {
+        foreignKey: 'productSubCategoryId',
+        as: 'subCategory',
+        targetKey: 'productSubCategoryId',
+        onDelete: 'CASCADE',
+      })
+      productDetails.belongsTo(models.productDiscount, {
+        foreignKey: 'discountId',
+        as: 'discount',
+        targetKey: 'discountId',
+        onDelete: 'CASCADE',
+      })
+      productDetails.hasMany(models.productVariants, {
+        foreignKey: 'productSKU',
+        as: 'variants',
+        sourceKey: 'productSKU',
+        onDelete: 'CASCADE',
+      })
+      productDetails.hasMany(models.productsPair, {
+        foreignKey: 'productId',
+        as: 'pairing',
+        sourceKey: 'productId',
+        onDelete: 'CASCADE',
+      })
+      productDetails.hasMany(models.productsPair, {
+        foreignKey: 'productId',
+        as: 'pairedProduct',
+        sourceKey: 'productId',
+        onDelete: 'CASCADE',
+      })
+      productDetails.hasMany(models.userChoices, {
+        foreignKey: 'productId',
+        as: 'Choices',
+        sourceKey: 'productId',
         onDelete: 'CASCADE',
       })
     }

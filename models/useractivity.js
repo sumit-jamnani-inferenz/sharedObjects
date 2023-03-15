@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       userActivity.belongsTo(models.userAccounts, {
         foreignKey: 'accountId',
         as: 'user',
+        targetKey: 'accountId',
         onDelete: 'CASCADE',
       })
     }

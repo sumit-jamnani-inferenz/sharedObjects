@@ -5,6 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class questionMaster extends Model {
     static associate(models) {
+      questionMaster.hasMany(models.userAnswers, {
+        foreignKey: 'questionId',
+        as: 'answers',
+        targetKey: 'questionId',
+        onDelete: 'CASCADE',
+      })
     }
   }
   questionMaster.init({
