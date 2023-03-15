@@ -33,6 +33,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      response: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
       userFeedback: {
         type: Sequelize.TEXT,
         allowNull: false
