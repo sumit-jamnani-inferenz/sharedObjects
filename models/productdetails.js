@@ -11,10 +11,15 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: 'productSKU',
         onDelete: 'CASCADE',
       })
-
       productDetails.hasMany(models.userChoices, {
         foreignKey: 'productId',
         as: 'Choices',
+        onDelete: 'CASCADE',
+      })
+      productDetails.belongsTo(models.productCategories, {
+        foreignKey: 'productCategoryId',
+        as: 'category',
+        targetKey: 'productCategoryId',
         onDelete: 'CASCADE',
       })
     }
