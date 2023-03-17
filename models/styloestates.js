@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       })
       styloEstates.hasMany(models.leasedEstates, {
-        foreignKey: 'leaseId',
+        foreignKey: 'estateId',
         as: 'styloEstates',
-        sourceKey: 'leaseId',
+        sourceKey: 'estateId',
         onDelete: 'CASCADE',
       })
     }
