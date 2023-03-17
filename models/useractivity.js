@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       accountWallet: {
         type: DataTypes.STRING,
       },
-      blockNumber: {
+      blockINTEGER: {
         type: DataTypes.STRING,
         allowNull: false,
       },

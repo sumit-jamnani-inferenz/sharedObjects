@@ -29,6 +29,18 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: 'brandId',
         onDelete: 'CASCADE',
       })
+      Brand.hasMany(models.leasedEstates, {
+        foreignKey: 'brandId',
+        as: 'leasedEstates',
+        sourceKey: 'brandId',
+        onDelete: 'CASCADE',
+      })
+      Brand.hasMany(models.orgPayments, {
+        foreignKey: 'brandId',
+        as: 'leasedEstates',
+        sourceKey: 'brandId',
+        onDelete: 'CASCADE',
+      })
     }
   }
   Brand.init(

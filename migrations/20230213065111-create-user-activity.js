@@ -21,7 +21,7 @@ module.exports = {
       accountWallet: {
         type: Sequelize.STRING,
       },
-      blockNumber: {
+      blockINTEGER: {
         type: Sequelize.STRING,
         allowNull: false,
       },
