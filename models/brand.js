@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       })
       Brand.hasMany(models.orgPayments, {
         foreignKey: 'brandId',
-        as: 'leasedEstates',
+        as: 'payments',
         sourceKey: 'brandId',
         onDelete: 'CASCADE',
       })
