@@ -62,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       timestamp: {
-        type: DataTypes.DATE,
+        type: DataTypes.BIGINT,
         allowNull: false,
       },
       blockNumber: {

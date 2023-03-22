@@ -49,7 +49,7 @@ module.exports = {
         allowNull: false,
       },
       timestamp: {
-        type: Sequelize.DATE,
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       blockNumber: {
