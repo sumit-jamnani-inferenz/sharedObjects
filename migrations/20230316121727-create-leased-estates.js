@@ -52,7 +52,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      blockINTEGER: {
+      blockNumber: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

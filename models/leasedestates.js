@@ -65,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      blockINTEGER: {
+      blockNumber: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
