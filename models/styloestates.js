@@ -61,8 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
     },
     coOrdinates: {
-      type: DataTypes.JSON,
-      allowNull: false
+      type: DataTypes.ARRAY(DataTypes.TEXT),
     },
     modelLink: {
       type: DataTypes.TEXT,
@@ -73,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     isAvailable: {
-      type: DataTypes.TEXT,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     misc: {

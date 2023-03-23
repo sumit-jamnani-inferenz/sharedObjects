@@ -49,8 +49,7 @@ module.exports = {
         type: Sequelize.JSON,
       },
       coOrdinates: {
-        type: Sequelize.JSON,
-        allowNull: false
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       modelLink: {
         type: Sequelize.TEXT,
@@ -61,7 +60,7 @@ module.exports = {
         allowNull: false,
       },
       isAvailable: {
-        type: Sequelize.TEXT,
+        type: Sequelize.BOOLEAN,
         allowNull: false,
       },
       misc: {

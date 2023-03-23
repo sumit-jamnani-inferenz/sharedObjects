@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('orgPayments', {
-      paymentId: {
+    await queryInterface.createTable("orgPayments", {
+      invoiceId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
@@ -12,39 +12,41 @@ module.exports = {
       leaseId: {
         type: Sequelize.UUID,
         references: {
-          model: 'leasedEstates',
-          key: 'leaseId',
+          model: "leasedEstates",
+          key: "leaseId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       brandId: {
         type: Sequelize.UUID,
         references: {
-          model: 'Brand',
-          key: 'brandId',
+          model: "Brand",
+          key: "brandId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
-      paymentAmount: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
-      },
-      invoiceINTEGER: {
+      orderId: {
         type: Sequelize.TEXT,
+      },
+      paymentId: {
+        type: Sequelize.TEXT,
+      },
+      amount: {
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       blockchianTID: {
         type: Sequelize.TEXT,
       },
-      BAWalletAddress: {
+      walletAddress: {
         type: Sequelize.TEXT,
       },
-      blockINTEGER: {
+      blockNumber: {
         type: Sequelize.TEXT,
       },
-      BLEpochTimestamp: {
+      epochTimestamp: {
         type: Sequelize.TEXT,
       },
       misc: {
@@ -52,15 +54,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('orgPayments');
-  }
+    await queryInterface.dropTable("orgPayments");
+  },
 };
