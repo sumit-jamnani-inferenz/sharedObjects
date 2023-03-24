@@ -43,6 +43,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
+      currency: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       blockchianTID: {
         type: DataTypes.TEXT,
       },

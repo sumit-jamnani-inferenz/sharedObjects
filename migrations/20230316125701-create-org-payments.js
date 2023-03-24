@@ -37,6 +37,10 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      currency: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       blockchianTID: {
         type: Sequelize.TEXT,
       },
