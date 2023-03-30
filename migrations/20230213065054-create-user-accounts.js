@@ -1,8 +1,8 @@
-'use strict'
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('userAccounts', {
+    await queryInterface.createTable("userAccounts", {
       accountId: {
         allowNull: false,
         primaryKey: true,
@@ -12,25 +12,26 @@ module.exports = {
       roleId: {
         type: Sequelize.UUID,
         references: {
-          model: 'roles',
-          key: 'roleId',
+          model: "roles",
+          key: "roleId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       mappedUserId: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      accountName:
-      {
+      accountName: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      accountEmail:
-      {
+      accountEmail: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      accountContact: {
+        type: Sequelize.STRING,
       },
       accountWallet: {
         type: Sequelize.STRING,
@@ -39,6 +40,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       isLoggedIn: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
@@ -51,9 +56,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('userAccounts')
+    await queryInterface.dropTable("userAccounts");
   },
-}
+};

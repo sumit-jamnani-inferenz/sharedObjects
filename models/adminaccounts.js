@@ -40,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      accountContact: {
+        type: DataTypes.STRING,
+      },
       accountPassword: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -51,6 +54,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       isLoggedIn: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      isActive: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },

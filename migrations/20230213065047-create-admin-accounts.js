@@ -1,8 +1,8 @@
-'use strict'
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('adminAccounts', {
+    await queryInterface.createTable("adminAccounts", {
       accountId: {
         allowNull: false,
         primaryKey: true,
@@ -12,20 +12,20 @@ module.exports = {
       roleId: {
         type: Sequelize.UUID,
         references: {
-          model: 'roles',
-          key: 'roleId',
+          model: "roles",
+          key: "roleId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       brandId: {
         type: Sequelize.UUID,
         references: {
-          model: 'Brand',
-          key: 'brandId',
+          model: "Brand",
+          key: "brandId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       accountName: {
         type: Sequelize.STRING,
@@ -34,6 +34,9 @@ module.exports = {
       accountEmail: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      accountContact: {
+        type: Sequelize.STRING,
       },
       accountPassword: {
         type: Sequelize.STRING,
@@ -49,6 +52,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
+      isActive: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
@@ -58,9 +65,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('adminAccounts')
+    await queryInterface.dropTable("adminAccounts");
   },
-}
+};
