@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
       roleId: {
         type: DataTypes.UUID,
       },
+      mappedUserId: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       brandId: {
         type: DataTypes.UUID,
       },

@@ -18,6 +18,10 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      mappedUserId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       brandId: {
         type: Sequelize.UUID,
         references: {
