@@ -1,14 +1,14 @@
-'use strict'
-const { Model } = require('sequelize')
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class userActivity extends Model {
     static associate(models) {
       userActivity.belongsTo(models.userAccounts, {
-        foreignKey: 'accountId',
-        as: 'user',
-        targetKey: 'accountId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "accountId",
+        as: "user",
+        targetKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userActivity.init(
@@ -49,9 +49,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'userActivity',
-      tableName: 'userActivity',
-    },
-  )
-  return userActivity
-}
+      modelName: "userActivity",
+      tableName: "userActivity",
+    }
+  );
+  return userActivity;
+};

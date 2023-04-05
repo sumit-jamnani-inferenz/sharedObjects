@@ -38,10 +38,6 @@ module.exports = {
       accountContact: {
         type: Sequelize.STRING,
       },
-      accountPassword: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       accountWallet: {
         type: Sequelize.STRING,
       },

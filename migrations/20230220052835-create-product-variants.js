@@ -1,54 +1,54 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('productVariants', {
+    await queryInterface.createTable("productVariants", {
       variantId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
       },
       productSKU: {
         type: Sequelize.STRING,
         allowNull: false,
         references: {
-          model: 'productDetails',
-          key: 'productSKU',
+          model: "productDetails",
+          key: "productSKU",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       variantValue: {
         type: Sequelize.JSONB,
-        allowNull: false
+        allowNull: false,
       },
       price: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       quantity: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       imageURL: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: false,
       },
       misc: {
-        type: Sequelize.JSON
+        type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('productVariants');
-  }
+    await queryInterface.dropTable("productVariants");
+  },
 };

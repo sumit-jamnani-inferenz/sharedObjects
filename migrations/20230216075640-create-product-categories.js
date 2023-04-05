@@ -1,41 +1,41 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('productCategories', {
+    await queryInterface.createTable("productCategories", {
       productCategoryId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
       },
       brandId: {
         type: Sequelize.UUID,
         references: {
-          model: 'Brand',
-          key: 'brandId',
+          model: "Brand",
+          key: "brandId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       categoryName: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       misc: {
         type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('productCategories');
-  }
+    await queryInterface.dropTable("productCategories");
+  },
 };

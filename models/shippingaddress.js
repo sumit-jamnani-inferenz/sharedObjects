@@ -1,14 +1,14 @@
-'use strict'
-const { Model } = require('sequelize')
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class shippingAddress extends Model {
     static associate(models) {
       shippingAddress.belongsTo(models.userAccounts, {
-        foreignKey: 'accountId',
-        as: 'user',
-        targetKey: 'accountId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "accountId",
+        as: "user",
+        targetKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   shippingAddress.init(
@@ -57,9 +57,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'shippingAddress',
-      tableName: 'shippingAddress',
-    },
-  )
-  return shippingAddress
-}
+      modelName: "shippingAddress",
+      tableName: "shippingAddress",
+    }
+  );
+  return shippingAddress;
+};

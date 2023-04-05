@@ -1,8 +1,8 @@
-'use strict'
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('userActivity', {
+    await queryInterface.createTable("userActivity", {
       activityId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -12,11 +12,11 @@ module.exports = {
       accountId: {
         type: Sequelize.UUID,
         references: {
-          model: 'userAccounts',
-          key: 'accountId',
+          model: "userAccounts",
+          key: "accountId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       accountWallet: {
         type: Sequelize.STRING,
@@ -50,9 +50,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('userActivity')
+    await queryInterface.dropTable("userActivity");
   },
-}
+};

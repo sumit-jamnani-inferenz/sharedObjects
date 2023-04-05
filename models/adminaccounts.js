@@ -1,21 +1,21 @@
-'use strict'
-const { Model } = require('sequelize')
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class adminAccounts extends Model {
     static associate(models) {
       adminAccounts.belongsTo(models.roles, {
-        foreignKey: 'roleId',
-        as: 'role',
-        targetKey: 'roleId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "roleId",
+        as: "role",
+        targetKey: "roleId",
+        onDelete: "CASCADE",
+      });
 
       adminAccounts.belongsTo(models.Brand, {
-        foreignKey: 'brandId',
-        as: 'brand',
-        targetKey: 'brandId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "brandId",
+        as: "brand",
+        targetKey: "brandId",
+        onDelete: "CASCADE",
+      });
     }
   }
   adminAccounts.init(
@@ -43,10 +43,6 @@ module.exports = (sequelize, DataTypes) => {
       accountContact: {
         type: DataTypes.STRING,
       },
-      accountPassword: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       accountWallet: {
         type: DataTypes.STRING,
       },
@@ -65,9 +61,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'adminAccounts',
-      tableName: 'adminAccounts',
-    },
-  )
-  return adminAccounts
-}
+      modelName: "adminAccounts",
+      tableName: "adminAccounts",
+    }
+  );
+  return adminAccounts;
+};

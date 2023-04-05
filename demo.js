@@ -1,4 +1,4 @@
-const sequelize = require('./config/db/dbConfig')
+const sequelize = require("./config/db/dbConfig");
 
 // const demo = async (req, res) => {
 

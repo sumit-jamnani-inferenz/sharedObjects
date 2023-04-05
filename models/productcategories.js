@@ -1,51 +1,52 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class productCategories extends Model {
     static associate(models) {
       productCategories.belongsTo(models.Brand, {
-        foreignKey: 'brandId',
-        as: 'brand',
-        targetKey: 'brandId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "brandId",
+        as: "brand",
+        targetKey: "brandId",
+        onDelete: "CASCADE",
+      });
       productCategories.hasMany(models.productSubCategories, {
-        foreignKey: 'productCategoryId',
-        as: 'productSubCategories',
-        sourceKey: 'productCategoryId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "productCategoryId",
+        as: "productSubCategories",
+        sourceKey: "productCategoryId",
+        onDelete: "CASCADE",
+      });
       productCategories.hasMany(models.productDetails, {
-        foreignKey: 'productCategoryId',
-        as: 'products',
-        sourceKey: 'productCategoryId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "productCategoryId",
+        as: "products",
+        sourceKey: "productCategoryId",
+        onDelete: "CASCADE",
+      });
     }
   }
-  productCategories.init({
-    productCategoryId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
+  productCategories.init(
+    {
+      productCategoryId: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
+      brandId: {
+        type: DataTypes.UUID,
+      },
+      categoryName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      misc: {
+        type: DataTypes.JSON,
+      },
     },
-    brandId: {
-      type: DataTypes.UUID,
-    },
-    categoryName: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    misc: {
-      type: DataTypes.JSON,
+    {
+      sequelize,
+      modelName: "productCategories",
+      tableName: "productCategories",
     }
-  }, {
-    sequelize,
-    modelName: 'productCategories',
-    tableName: 'productCategories'
-  });
+  );
   return productCategories;
 };

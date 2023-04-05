@@ -1,8 +1,8 @@
-'use strict'
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('shippingAddress', {
+    await queryInterface.createTable("shippingAddress", {
       addressId: {
         allowNull: false,
         primaryKey: true,
@@ -12,11 +12,11 @@ module.exports = {
       accountId: {
         type: Sequelize.UUID,
         references: {
-          model: 'userAccounts',
-          key: 'accountId',
+          model: "userAccounts",
+          key: "accountId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       GEOCode: {
         type: Sequelize.STRING,
@@ -58,9 +58,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('shippingAddress')
+    await queryInterface.dropTable("shippingAddress");
   },
-}
+};

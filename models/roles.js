@@ -1,21 +1,21 @@
-'use strict'
-const { Model } = require('sequelize')
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class roles extends Model {
     static associate(models) {
       roles.hasMany(models.userAccounts, {
-        foreignKey: 'roleId',
-        as: 'users',
-        sourceKey: 'roleId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "roleId",
+        as: "users",
+        sourceKey: "roleId",
+        onDelete: "CASCADE",
+      });
 
       roles.hasMany(models.adminAccounts, {
-        foreignKey: 'roleId',
-        as: 'adminUsers',
-        sourceKey: 'roleId',
-        onDelete: 'CASCADE',
-      })
+        foreignKey: "roleId",
+        as: "adminUsers",
+        sourceKey: "roleId",
+        onDelete: "CASCADE",
+      });
     }
   }
   roles.init(
@@ -34,9 +34,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'roles',
-      tableName: 'roles',
-    },
-  )
-  return roles
-}
+      modelName: "roles",
+      tableName: "roles",
+    }
+  );
+  return roles;
+};

@@ -1,68 +1,68 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('productDetails', {
+    await queryInterface.createTable("productDetails", {
       productId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
         primaryKey: true,
-        unique: true
+        unique: true,
       },
       productSKU: {
         type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true,
-        unique: true
+        unique: true,
       },
       brandId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
-          model: 'Brand',
-          key: 'brandId',
+          model: "Brand",
+          key: "brandId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       discountId: {
         type: Sequelize.UUID,
         allowNull: true,
         references: {
-          model: 'productDiscount',
-          key: 'discountId',
+          model: "productDiscount",
+          key: "discountId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       productCategoryId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
-          model: 'productCategories',
-          key: 'productCategoryId',
+          model: "productCategories",
+          key: "productCategoryId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       productSubCategoryId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
-          model: 'productSubCategories',
-          key: 'productSubCategoryId',
+          model: "productSubCategories",
+          key: "productSubCategoryId",
         },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       productName: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       productDescription: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       productPrice: {
         type: Sequelize.FLOAT,
@@ -72,19 +72,19 @@ module.exports = {
       },
       brandName: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: false,
       },
       specifications: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       productMaterial: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       searchKeywords: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       unit: {
         type: Sequelize.STRING,
@@ -97,42 +97,42 @@ module.exports = {
       },
       minOrderQTY: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       maxOrderQTY: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       shippingWeight: {
         type: Sequelize.FLOAT,
-        allowNull: false
+        allowNull: false,
       },
       shippingWeightUOM: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       itemDimensions: {
         type: Sequelize.JSON,
-        allowNull: false
+        allowNull: false,
       },
       isDigitalAsset: {
         type: Sequelize.BOOLEAN,
-        allowNull: false
+        allowNull: false,
       },
       misc: {
         type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('productDetails');
-  }
+    await queryInterface.dropTable("productDetails");
+  },
 };
