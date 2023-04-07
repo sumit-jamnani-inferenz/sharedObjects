@@ -34,10 +34,10 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       preferredStyle: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       preferredFit: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       minPrice: {
         type: Sequelize.FLOAT,
@@ -46,22 +46,22 @@ module.exports = {
         type: Sequelize.FLOAT,
       },
       neckType: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       sleeveType: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       patternType: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       fabricType: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       colorPalate: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       preferredBrand: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       createdAt: {
         allowNull: false,

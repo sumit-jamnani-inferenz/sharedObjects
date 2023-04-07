@@ -38,10 +38,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
       },
       preferredStyle: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       preferredFit: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       minPrice: {
         type: DataTypes.FLOAT,
@@ -50,22 +50,22 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
       },
       neckType: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       sleeveType: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       patternType: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       fabricType: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       colorPalate: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       preferredBrand: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       misc: {
         type: DataTypes.JSON,
