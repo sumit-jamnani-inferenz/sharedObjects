@@ -45,6 +45,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
+      userAccounts.hasMany(models.userAvatar, {
+        foreignKey: "accountId",
+        as: "userAvatar",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userAccounts.init(
@@ -74,9 +80,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       accountWallet: {
-        type: DataTypes.STRING,
-      },
-      accountAvatar: {
         type: DataTypes.STRING,
       },
       isLoggedIn: {

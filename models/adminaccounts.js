@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   adminAccounts.init(
     {
-      accountId: {
+      adminAccountId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
