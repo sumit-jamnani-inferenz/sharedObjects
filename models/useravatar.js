@@ -29,27 +29,21 @@ module.exports = (sequelize, DataTypes) => {
       },
       skinColor: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       hairStyle: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       topWear: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       bottomWear: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       shoes: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       misc: {
         type: DataTypes.JSON,
-        allowNull: false,
       },
     },
     {

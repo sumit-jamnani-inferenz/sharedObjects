@@ -25,23 +25,18 @@ module.exports = {
       },
       skinColor: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       hairStyle: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       topWear: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       bottomWear: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       shoes: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -53,7 +48,6 @@ module.exports = {
       },
       misc: {
         type: Sequelize.JSON,
-        allowNull: false,
       },
     });
   },
