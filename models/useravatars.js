@@ -1,9 +1,9 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class userAvatar extends Model {
+  class userAvatars extends Model {
     static associate(models) {
-      userAccounts.belongsTo(models.userAccounts, {
+      userAvatars.belongsTo(models.userAccounts, {
         foreignKey: "accountId",
         as: "User",
         targetKey: "accountId",
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  userAvatar.init(
+  userAvatars.init(
     {
       userAvatarId: {
         type: DataTypes.UUID,
@@ -52,8 +52,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "userAvatar",
+      modelName: "userAvatars",
     }
   );
-  return userAvatar;
+  return userAvatars;
 };

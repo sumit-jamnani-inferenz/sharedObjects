@@ -45,9 +45,9 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
-      userAccounts.hasMany(models.userAvatar, {
+      userAccounts.hasMany(models.userAvatars, {
         foreignKey: "accountId",
-        as: "userAvatar",
+        as: "userAvatars",
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
