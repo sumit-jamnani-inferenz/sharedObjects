@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
       },
+      playerId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+      },
       avatarIndex: {
         type: DataTypes.TEXT,
         allowNull: false,

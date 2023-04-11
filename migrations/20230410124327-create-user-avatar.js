@@ -19,6 +19,10 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      playerId: {
+        type: Sequelize.UUID,
+        allowNull: false,
+      },
       avatarIndex: {
         type: Sequelize.TEXT,
         allowNull: false,
