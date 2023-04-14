@@ -39,7 +39,6 @@ module.exports = {
       },
       userFeedback: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       misc: {
         type: Sequelize.JSON,

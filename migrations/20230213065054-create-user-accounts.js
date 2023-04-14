@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      accountUserName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       accountName: {
         type: Sequelize.STRING,
         allowNull: false,

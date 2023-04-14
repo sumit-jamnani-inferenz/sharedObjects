@@ -43,7 +43,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       userFeedback: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       misc: {
         type: DataTypes.JSON,
