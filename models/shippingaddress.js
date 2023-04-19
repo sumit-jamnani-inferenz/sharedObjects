@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       shippingAddress.hasMany(models.consumerOrders, {
         foreignKey: "shippingAddressId",
-        as: "user",
+        as: "consumerOrders",
         sourceKey: "shippingAddressId",
         onDelete: "CASCADE",
       });
