@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       orderItems.belongsTo(models.productDiscount, {
         foreignKey: "discountId",
-        as: "productDiscount",
+        as: "discount",
         targetKey: "discountId",
         onDelete: "CASCADE",
       });
