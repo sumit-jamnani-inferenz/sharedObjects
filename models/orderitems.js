@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       shipMode: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       daysToShip: {
@@ -72,20 +72,20 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       trackingNumber: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       isReturned: {
         type: DataTypes.BOOLEAN,
       },
       returnReason: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       orderStatus: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       misc: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
     },
     {

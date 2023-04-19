@@ -83,26 +83,26 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       mappedUserId: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountUserName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountEmail: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountContact: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       accountWallet: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,

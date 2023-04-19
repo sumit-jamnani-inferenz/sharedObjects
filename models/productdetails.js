@@ -87,7 +87,7 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       productSKU: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
         primaryKey: true,
         unique: true,
@@ -107,11 +107,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       productName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       productDescription: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       productPrice: {
@@ -121,29 +121,29 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON,
       },
       brandName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       specifications: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       productMaterial: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       searchKeywords: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       unit: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       quantity: {
         type: DataTypes.INTEGER,
       },
       imageURL: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       minOrderQTY: {
         type: DataTypes.INTEGER,
@@ -158,7 +158,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       shippingWeightUOM: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       itemDimensions: {

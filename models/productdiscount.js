@@ -35,18 +35,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       discountName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       discountDescription: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       discountPercentage: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
       discountType: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       discountStartDate: {

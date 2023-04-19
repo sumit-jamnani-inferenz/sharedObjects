@@ -52,28 +52,28 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       brandName: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       brandEmail: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
-      brandWebsite: Datatypes.TEXT,
+      brandWebsite: DataTypes.TEXT,
       brandContact: {
         type: DataTypes.BIGINT,
         allowNull: false,
       },
-      brandAddress: Datatypes.TEXT,
+      brandAddress: DataTypes.TEXT,
       brandWallet: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       isActive: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
       timestamp: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       misc: DataTypes.JSON,

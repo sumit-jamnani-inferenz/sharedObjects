@@ -38,17 +38,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       orderId: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       paymentId: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       productsQty: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       accountWallet: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       totalAmount: {
         type: DataTypes.INTEGER,
@@ -59,19 +59,19 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       blockchianTID: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       BAWalletAddress: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       blockNumber: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       BLEpochTimestamp: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       transactionStatus: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       misc: {

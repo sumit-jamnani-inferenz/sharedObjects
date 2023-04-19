@@ -29,33 +29,33 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       GEOCode: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       street1: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       street2: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
       },
       city: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       state: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       country: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       postalCode: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       addressType: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
 
