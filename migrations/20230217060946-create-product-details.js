@@ -11,7 +11,7 @@ module.exports = {
         unique: true,
       },
       productSKU: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
         primaryKey: true,
         unique: true,
@@ -57,11 +57,11 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       productName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       productDescription: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       productPrice: {
@@ -75,25 +75,25 @@ module.exports = {
         allowNull: false,
       },
       specifications: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       productMaterial: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       searchKeywords: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       unit: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       quantity: {
         type: Sequelize.INTEGER,
       },
       imageURL: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       minOrderQTY: {
         type: Sequelize.INTEGER,
@@ -108,7 +108,7 @@ module.exports = {
         allowNull: false,
       },
       shippingWeightUOM: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       itemDimensions: {

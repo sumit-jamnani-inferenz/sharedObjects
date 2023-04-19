@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       categoryName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       misc: {

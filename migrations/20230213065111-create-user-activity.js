@@ -19,14 +19,14 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       accountWallet: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
-      blockINTEGER: {
-        type: Sequelize.STRING,
+      blockNumber: {
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       activityType: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       activityTime: {
@@ -34,10 +34,10 @@ module.exports = {
         allowNull: false,
       },
       NFTMetadata: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       blockTimestamp: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
 

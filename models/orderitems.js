@@ -1,0 +1,97 @@
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+  class orderItems extends Model {
+    static associate(models) {
+      orderItems.belongsTo(models.consumerOrders, {
+        foreignKey: "invoiceId",
+        as: "consumerOrders",
+        targetKey: "invoiceId",
+        onDelete: "CASCADE",
+      });
+      orderItems.belongsTo(models.productDetails, {
+        foreignKey: "productId",
+        as: "productDetails",
+        targetKey: "productId",
+        onDelete: "CASCADE",
+      });
+      orderItems.belongsTo(models.productDiscount, {
+        foreignKey: "discountId",
+        as: "productDiscount",
+        targetKey: "discountId",
+        onDelete: "CASCADE",
+      });
+    }
+  }
+  orderItems.init(
+    {
+      orderItemId: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
+      invoiceId: {
+        type: DataTypes.UUID,
+      },
+      productId: {
+        type: DataTypes.UUID,
+      },
+      discountId: {
+        type: DataTypes.UUID,
+      },
+      productPrice: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      productQty: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      productDiscount: {
+        type: DataTypes.FLOAT,
+      },
+      productTax: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      totalAmount: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      shipDate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      shipMode: {
+        type: Datatypes.TEXT,
+        allowNull: false,
+      },
+      daysToShip: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      trackingNumber: {
+        type: Datatypes.TEXT,
+      },
+      isReturned: {
+        type: DataTypes.BOOLEAN,
+      },
+      returnReason: {
+        type: Datatypes.TEXT,
+      },
+      orderStatus: {
+        type: Datatypes.TEXT,
+        allowNull: false,
+      },
+      misc: {
+        type: Datatypes.TEXT,
+      },
+    },
+    {
+      sequelize,
+      modelName: "orderItems",
+    }
+  );
+  return orderItems;
+};

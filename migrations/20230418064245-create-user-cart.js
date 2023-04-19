@@ -2,18 +2,25 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("roles", {
-      roleId: {
+    await queryInterface.createTable("userCart", {
+      cartId: {
         allowNull: false,
-        primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
       },
-      roleType: {
-        type: Sequelize.TEXT,
-        allowNull: false,
+      accountId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "userAccounts",
+          key: "accountId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
-      misc: Sequelize.JSON,
+      misc: {
+        type: Sequelize.JSON,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -25,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("roles");
+    await queryInterface.dropTable("userCart");
   },
 };

@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true,
       },
       variantName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       misc: {

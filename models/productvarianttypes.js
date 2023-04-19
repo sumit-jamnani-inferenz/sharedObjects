@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       variantName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       misc: {

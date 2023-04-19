@@ -19,29 +19,29 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       mappedUserId: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       accountUserName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       accountName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       accountEmail: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       accountContact: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       accountWallet: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       accountAvatar: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       isLoggedIn: {
         type: Sequelize.BOOLEAN,

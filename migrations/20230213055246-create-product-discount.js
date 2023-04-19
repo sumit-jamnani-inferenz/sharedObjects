@@ -20,18 +20,18 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       discountName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       discountDescription: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       discountPercentage: {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
       discountType: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       discountStartDate: {

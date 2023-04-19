@@ -23,14 +23,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       accountWallet: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
-      blockINTEGER: {
-        type: DataTypes.STRING,
+      blockNumber: {
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       activityType: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       activityTime: {
@@ -38,10 +38,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       NFTMetadata: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       blockTimestamp: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
 

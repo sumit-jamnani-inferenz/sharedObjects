@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "discountId",
         onDelete: "CASCADE",
       });
+      productDiscount.hasMany(models.orderItems, {
+        foreignKey: "discountId",
+        as: "orderItems",
+        sourceKey: "discountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   productDiscount.init(
@@ -29,18 +35,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       discountName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       discountDescription: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       discountPercentage: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
       discountType: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       discountStartDate: {

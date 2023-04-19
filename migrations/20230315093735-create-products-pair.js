@@ -43,6 +43,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      clothingType: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       occasion: {
         type: Sequelize.TEXT,
         allowNull: false,

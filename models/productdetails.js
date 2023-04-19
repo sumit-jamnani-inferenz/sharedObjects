@@ -57,6 +57,24 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "productId",
         onDelete: "CASCADE",
       });
+      productDetails.hasMany(models.wishlistItems, {
+        foreignKey: "productId",
+        as: "wishlistItems",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
+      productDetails.hasMany(models.cartItems, {
+        foreignKey: "productId",
+        as: "cartItems",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
+      productDetails.hasMany(models.orderItems, {
+        foreignKey: "productId",
+        as: "orderItems",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
     }
   }
   productDetails.init(
@@ -69,7 +87,7 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       productSKU: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
         primaryKey: true,
         unique: true,
@@ -89,11 +107,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       productName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       productDescription: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       productPrice: {
@@ -103,29 +121,29 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON,
       },
       brandName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       specifications: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       productMaterial: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       searchKeywords: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       unit: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       quantity: {
         type: DataTypes.INTEGER,
       },
       imageURL: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       minOrderQTY: {
         type: DataTypes.INTEGER,
@@ -140,7 +158,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       shippingWeightUOM: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       itemDimensions: {

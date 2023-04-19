@@ -19,7 +19,7 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       subCategoryName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       misc: {

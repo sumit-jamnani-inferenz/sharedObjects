@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       productSKU: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       variantValue: {

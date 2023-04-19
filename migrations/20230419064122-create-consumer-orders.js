@@ -2,8 +2,8 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("shippingAddress", {
-      shippingAddressId: {
+    await queryInterface.createTable("consumerOrders", {
+      invoiceId: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
@@ -18,38 +18,55 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      GEOCode: {
+      shippingAddressId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "shippingAddress",
+          key: "shippingAddressId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
+      orderId: {
         type: Sequelize.TEXT,
       },
-      street1: {
+      paymentId: {
+        type: Sequelize.TEXT,
+      },
+      productsQty: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      accountWallet: {
+        type: Sequelize.TEXT,
+      },
+      totalAmount: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      totalShipCost: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      blockchianTID: {
+        type: Sequelize.TEXT,
+      },
+      BAWalletAddress: {
+        type: Sequelize.TEXT,
+      },
+      blockNumber: {
+        type: Sequelize.TEXT,
+      },
+      BLEpochTimestamp: {
+        type: Sequelize.TEXT,
+      },
+      transactionStatus: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      street2: {
-        type: Sequelize.TEXT,
+      misc: {
+        type: Sequelize.JSON,
       },
-      city: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      state: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      country: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      postalCode: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      addressType: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-
-      misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -61,6 +78,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("shippingAddress");
+    await queryInterface.dropTable("consumerOrders");
   },
 };

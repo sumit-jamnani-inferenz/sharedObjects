@@ -47,6 +47,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      clothingType: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       occasion: {
         type: DataTypes.TEXT,
         allowNull: false,

@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       roleType: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       misc: DataTypes.JSON,

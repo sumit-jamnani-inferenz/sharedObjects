@@ -51,6 +51,24 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
+      userAccounts.hasMany(models.userWishlists, {
+        foreignKey: "accountId",
+        as: "userWishlists",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
+      userAccounts.hasOne(models.userCart, {
+        foreignKey: "accountId",
+        as: "userCart",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
+      userAccounts.hasMany(models.consumerOrders, {
+        foreignKey: "accountId",
+        as: "consumerOrders",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userAccounts.init(
@@ -65,26 +83,26 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       mappedUserId: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       accountUserName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       accountName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       accountEmail: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       accountContact: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       accountWallet: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,

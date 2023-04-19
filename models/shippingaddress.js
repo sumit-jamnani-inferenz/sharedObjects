@@ -9,11 +9,17 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
+      shippingAddress.hasMany(models.consumerOrders, {
+        foreignKey: "shippingAddressId",
+        as: "user",
+        sourceKey: "shippingAddressId",
+        onDelete: "CASCADE",
+      });
     }
   }
   shippingAddress.init(
     {
-      addressId: {
+      shippingAddressId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
@@ -23,33 +29,33 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       GEOCode: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       street1: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       street2: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
       },
       city: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       state: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       country: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       postalCode: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       addressType: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
 

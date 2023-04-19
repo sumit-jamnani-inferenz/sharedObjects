@@ -10,28 +10,28 @@ module.exports = {
         primaryKey: true,
       },
       brandName: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       brandEmail: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
-      brandWebsite: Sequelize.STRING,
+      brandWebsite: Sequelize.TEXT,
       brandContact: {
         type: Sequelize.BIGINT,
         allowNull: false,
       },
-      brandAddress: Sequelize.STRING,
+      brandAddress: Sequelize.TEXT,
       brandWallet: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
       timestamp: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       misc: Sequelize.JSON,

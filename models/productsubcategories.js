@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       subCategoryName: {
-        type: DataTypes.STRING,
+        type: Datatypes.TEXT,
         allowNull: false,
       },
       misc: {
