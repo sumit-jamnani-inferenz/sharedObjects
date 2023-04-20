@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       productsPair.belongsTo(models.productDetails, {
         foreignKey: "productId",
         as: "pairedProductDetails",
-        targetKey: "productId",
+        targetKey: "pairedProductId",
         onDelete: "CASCADE",
       });
     }
