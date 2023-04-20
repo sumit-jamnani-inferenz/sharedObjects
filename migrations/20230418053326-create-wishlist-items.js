@@ -21,8 +21,8 @@ module.exports = {
       productId: {
         type: Sequelize.UUID,
         references: {
-          model: "userAccounts",
-          key: "accountId",
+          model: "productDetails",
+          key: "productId",
         },
         onDelete: "CASCADE",
         onUpdate: "CASCADE",

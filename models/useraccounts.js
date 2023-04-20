@@ -83,7 +83,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       mappedUserId: {
-        type: DataTypes.TEXT,
+        type: DataTypes.UUID,
         allowNull: false,
       },
       accountUserName: {

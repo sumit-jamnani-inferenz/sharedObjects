@@ -19,7 +19,7 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       mappedUserId: {
-        type: Sequelize.TEXT,
+        type: Sequelize.UUID,
         allowNull: false,
       },
       accountUserName: {
@@ -38,9 +38,6 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       accountWallet: {
-        type: Sequelize.TEXT,
-      },
-      accountAvatar: {
         type: Sequelize.TEXT,
       },
       isLoggedIn: {

@@ -19,7 +19,7 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       mappedUserId: {
-        type: Sequelize.TEXT,
+        type: Sequelize.UUID,
         allowNull: false,
       },
       brandId: {
@@ -44,6 +44,7 @@ module.exports = {
       },
       accountWallet: {
         type: Sequelize.TEXT,
+        allowNull: false,
       },
       accountAvatar: {
         type: Sequelize.TEXT,
