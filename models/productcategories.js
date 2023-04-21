@@ -3,7 +3,7 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class productCategories extends Model {
     static associate(models) {
-      productCategories.belongsTo(models.Brand, {
+      productCategories.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",

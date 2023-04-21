@@ -21,7 +21,7 @@ module.exports = {
       brandId: {
         type: Sequelize.UUID,
         references: {
-          model: "Brand",
+          model: "brand",
           key: "brandId",
         },
         onDelete: "CASCADE",
