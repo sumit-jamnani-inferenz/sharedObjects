@@ -37,22 +37,22 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       accountName: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountEmail: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountContact: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       accountWallet: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       accountAvatar: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,

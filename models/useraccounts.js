@@ -69,6 +69,18 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
+      userAccounts.hasMany(models.userLobby, {
+        foreignKey: "accountId",
+        as: "userLobby",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
+      userAccounts.hasMany(models.lobbyInfo, {
+        foreignKey: "accountId",
+        as: "lobbyInfo",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userAccounts.init(
