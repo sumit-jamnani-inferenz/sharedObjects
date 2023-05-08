@@ -93,7 +93,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       imageURL: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       minOrderQTY: {
         type: Sequelize.INTEGER,

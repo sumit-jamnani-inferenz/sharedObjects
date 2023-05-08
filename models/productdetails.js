@@ -149,7 +149,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       imageURL: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       minOrderQTY: {
         type: DataTypes.INTEGER,
