@@ -36,11 +36,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       imageURL: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
         allowNull: false,
       },
       misc: {
-        type: DataTypes.ARRAY(DataTypes.TEXT),
+        type: DataTypes.JSON,
       },
     },
     {
