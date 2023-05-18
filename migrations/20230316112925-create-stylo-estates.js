@@ -38,9 +38,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      areaSize: {
-        type: Sequelize.JSON,
-      },
       gridBlocks: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -50,6 +47,7 @@ module.exports = {
       },
       coOrdinates: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
+        allowNull: false,
       },
       modelLink: {
         type: Sequelize.TEXT,

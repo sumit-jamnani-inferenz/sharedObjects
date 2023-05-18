@@ -40,6 +40,12 @@ module.exports = {
       accountWallet: {
         type: Sequelize.TEXT,
       },
+      profileImage: {
+        type: Sequelize.TEXT,
+      },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+      },
       isLoggedIn: {
         type: Sequelize.BOOLEAN,
         allowNull: false,

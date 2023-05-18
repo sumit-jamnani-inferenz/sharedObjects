@@ -116,6 +116,12 @@ module.exports = (sequelize, DataTypes) => {
       accountWallet: {
         type: DataTypes.TEXT,
       },
+      profileImage: {
+        type: DataTypes.TEXT,
+      },
+      thumbnailImage: {
+        type: DataTypes.TEXT,
+      },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

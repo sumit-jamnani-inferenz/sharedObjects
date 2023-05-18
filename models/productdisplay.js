@@ -1,47 +1,40 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class mall extends Model {
+  class productDisplay extends Model {
     static associate(models) {
-      mall.belongsTo(models.city, {
-        foreignKey: "cityId",
-        as: "city",
-        targetKey: "cityId",
+      productDisplay.belongsTo(models.brand, {
+        foreignKey: "brandId",
+        as: "brand",
+        targetKey: "brandId",
         onDelete: "CASCADE",
       });
-      mall.hasMany(models.styloEstates, {
-        foreignKey: "mallId",
-        as: "styloEstates",
-        sourceKey: "mallId",
+      productDisplay.hasMany(models.productLocation, {
+        foreignKey: "displayId",
+        as: "productLocation",
+        sourceKey: "displayId",
         onDelete: "CASCADE",
       });
     }
   }
-  mall.init(
+  productDisplay.init(
     {
-      mallId: {
+      displayId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
       },
-      cityId: {
+      brandId: {
         type: DataTypes.UUID,
         allowNull: false,
       },
-      mallName: {
+      displayCode: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      gridBlocks: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      dimensions: {
-        type: DataTypes.JSON,
-      },
-      coOrdinates: {
-        type: DataTypes.ARRAY(DataTypes.TEXT),
+      displayImage: {
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       misc: {
@@ -50,9 +43,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "mall",
-      tableName: "mall",
+      modelName: "productDisplay",
     }
   );
-  return mall;
+  return productDisplay;
 };

@@ -9,6 +9,15 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
+      displayId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productDisplay",
+          key: "displayId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
       productId: {
         type: Sequelize.UUID,
         references: {
@@ -18,14 +27,9 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      brandId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "brand",
-          key: "brandId",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
+      isAvailable: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       misc: {
         type: Sequelize.JSON,

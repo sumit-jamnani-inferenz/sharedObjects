@@ -29,9 +29,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      areaSize: {
-        type: DataTypes.JSON,
-      },
       gridBlocks: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -40,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON,
       },
       coOrdinates: {
-        type: DataTypes.JSON,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
         allowNull: false,
       },
       misc: {

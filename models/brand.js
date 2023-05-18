@@ -41,9 +41,9 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "brandId",
         onDelete: "CASCADE",
       });
-      brand.hasMany(models.productLocation, {
+      brand.hasMany(models.productDisplay, {
         foreignKey: "brandId",
-        as: "productLocation",
+        as: "productDisplay",
         sourceKey: "brandId",
         onDelete: "CASCADE",
       });

@@ -81,7 +81,7 @@ module.exports = {
         allowNull: false,
       },
       misc: {
-        type: Sequelize.TEXT,
+        type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,

@@ -22,6 +22,14 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      isActive: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       misc: {
         type: Sequelize.JSON,
       },

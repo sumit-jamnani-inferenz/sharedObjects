@@ -46,6 +46,12 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      profileImage: {
+        type: Sequelize.TEXT,
+      },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+      },
       accountAvatar: {
         type: Sequelize.TEXT,
       },

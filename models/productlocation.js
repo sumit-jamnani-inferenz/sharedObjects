@@ -3,10 +3,10 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class productLocation extends Model {
     static associate(models) {
-      productLocation.belongsTo(models.brand, {
-        foreignKey: "brandId",
-        as: "brand",
-        targetKey: "brandId",
+      productLocation.belongsTo(models.productDisplay, {
+        foreignKey: "displayId",
+        as: "productDisplay",
+        targetKey: "displayId",
         onDelete: "CASCADE",
       });
       productLocation.belongsTo(models.productDetails, {
@@ -25,11 +25,15 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true,
       },
+      displayId: {
+        type: DataTypes.UUID,
+      },
       productId: {
         type: DataTypes.UUID,
       },
-      brandId: {
-        type: DataTypes.UUID,
+      isAvailable: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
       },
       misc: {
         type: DataTypes.JSON,

@@ -92,6 +92,10 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER,
       },
+      displayImage: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       imageURL: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
       },

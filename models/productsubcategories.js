@@ -33,6 +33,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
       misc: {
         type: DataTypes.JSON,
       },

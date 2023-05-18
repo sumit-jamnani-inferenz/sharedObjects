@@ -38,8 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       response: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.BOOLEAN,
       },
       userFeedback: {
         type: DataTypes.TEXT,

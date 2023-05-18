@@ -148,6 +148,10 @@ module.exports = (sequelize, DataTypes) => {
       quantity: {
         type: DataTypes.INTEGER,
       },
+      displayImage: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       imageURL: {
         type: DataTypes.ARRAY(DataTypes.TEXT),
       },
