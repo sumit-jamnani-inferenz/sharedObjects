@@ -22,6 +22,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      categoryImage: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       thumbnailImage: {
         type: Sequelize.TEXT,
         allowNull: false,
