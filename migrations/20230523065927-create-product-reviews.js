@@ -2,33 +2,47 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("productCategories", {
-      productCategoryId: {
+    await queryInterface.createTable("productReviews", {
+      reviewId: {
+        allowNull: false,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        allowNull: false,
         primaryKey: true,
       },
-      brandId: {
+      accountId: {
         type: Sequelize.UUID,
         references: {
-          model: "brand",
-          key: "brandId",
+          model: "userAccounts",
+          key: "accountId",
         },
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      categoryName: {
+      productId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productDetails",
+          key: "productId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
+      title: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      thumbnailImage: {
+      description: {
         type: Sequelize.TEXT,
+      },
+      ratings: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
-      isActive: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
+      imageURL: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+      },
+      videoURL: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       misc: {
         type: Sequelize.JSON,
@@ -44,6 +58,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("productCategories");
+    await queryInterface.dropTable("productReviews");
   },
 };

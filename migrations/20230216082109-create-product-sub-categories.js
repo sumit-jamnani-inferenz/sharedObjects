@@ -22,10 +22,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      subCategoryImage: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
       thumbnailImage: {
         type: Sequelize.TEXT,
         allowNull: false,

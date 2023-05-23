@@ -83,7 +83,7 @@ module.exports = {
         allowNull: false,
       },
       searchKeywords: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
         allowNull: false,
       },
       unit: {
@@ -93,6 +93,10 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       displayImage: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      thumbnailImage: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
@@ -120,6 +124,10 @@ module.exports = {
         allowNull: false,
       },
       isDigitalAsset: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },

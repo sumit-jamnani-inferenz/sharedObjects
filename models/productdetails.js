@@ -81,6 +81,18 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "productId",
         onDelete: "CASCADE",
       });
+      productDetails.hasMany(models.productReviews, {
+        foreignKey: "productId",
+        as: "productReviews",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
+      productDetails.hasMany(models.productViews, {
+        foreignKey: "productId",
+        as: "productViews",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
     }
   }
   productDetails.init(
@@ -139,7 +151,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       searchKeywords: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
         allowNull: false,
       },
       unit: {
@@ -149,6 +161,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       displayImage: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      thumbnailImage: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
@@ -176,6 +192,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       isDigitalAsset: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      isActive: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },

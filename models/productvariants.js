@@ -1,5 +1,5 @@
 "use strict";
-const { Model } = require("sequelize");
+const { Model, DATE } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class productVariants extends Model {
     static associate(models) {
@@ -31,12 +31,36 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      searchKeywords: {
+        type: DataTypes.ARRAY(DataTypes.TEXT),
+        allowNull: false,
+      },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       imageURL: {
         type: DataTypes.ARRAY(DataTypes.TEXT),
+        allowNull: false,
+      },
+      shippingWeight: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      shippingWeightUOM: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      itemDimensions: {
+        type: DataTypes.JSON,
+        allowNull: false,
+      },
+      isActive: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
       },
       misc: {

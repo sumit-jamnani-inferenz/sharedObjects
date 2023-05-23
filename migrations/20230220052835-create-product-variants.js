@@ -27,12 +27,36 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      searchKeywords: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+        allowNull: false,
+      },
       quantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       imageURL: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
+        allowNull: false,
+      },
+      shippingWeight: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+      },
+      shippingWeightUOM: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      itemDimensions: {
+        type: Sequelize.JSON,
+        allowNull: false,
+      },
+      isActive: {
+        type: Sequelize.BOOLEAN,
         allowNull: false,
       },
       misc: {
