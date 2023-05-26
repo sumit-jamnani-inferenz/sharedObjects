@@ -12,7 +12,7 @@ module.exports = {
       displayId: {
         type: Sequelize.UUID,
         references: {
-          model: "productDisplay",
+          model: "storeDisplay",
           key: "displayId",
         },
         onDelete: "CASCADE",

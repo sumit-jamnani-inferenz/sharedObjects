@@ -135,6 +135,10 @@ module.exports = (sequelize, DataTypes) => {
       productPrice: {
         type: DataTypes.FLOAT,
       },
+      priceCurrency: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       productAttributes: {
         type: DataTypes.JSON,
       },
@@ -160,7 +164,7 @@ module.exports = (sequelize, DataTypes) => {
       quantity: {
         type: DataTypes.INTEGER,
       },
-      displayImage: {
+      productDisplayImage: {
         type: DataTypes.TEXT,
         allowNull: false,
       },

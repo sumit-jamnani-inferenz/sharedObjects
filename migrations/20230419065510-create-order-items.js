@@ -27,6 +27,15 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      variantId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productVariants",
+          key: "variantId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
       discountId: {
         type: Sequelize.UUID,
         references: {

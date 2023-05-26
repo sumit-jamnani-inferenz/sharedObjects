@@ -67,6 +67,10 @@ module.exports = {
       productPrice: {
         type: Sequelize.FLOAT,
       },
+      priceCurrency: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       productAttributes: {
         type: Sequelize.JSON,
       },
@@ -92,7 +96,7 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER,
       },
-      displayImage: {
+      productDisplayImage: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

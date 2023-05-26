@@ -1,15 +1,15 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class productDisplay extends Model {
+  class storeDisplay extends Model {
     static associate(models) {
-      productDisplay.belongsTo(models.brand, {
+      storeDisplay.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
         onDelete: "CASCADE",
       });
-      productDisplay.hasMany(models.productLocation, {
+      storeDisplay.hasMany(models.productLocation, {
         foreignKey: "displayId",
         as: "productLocation",
         sourceKey: "displayId",
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  productDisplay.init(
+  storeDisplay.init(
     {
       displayId: {
         type: DataTypes.UUID,
@@ -43,9 +43,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "productDisplay",
-      tableName: "productDisplay",
+      modelName: "storeDisplay",
+      tableName: "storeDisplay",
     }
   );
-  return productDisplay;
+  return storeDisplay;
 };

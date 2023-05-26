@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "productId",
         onDelete: "CASCADE",
       });
+      orderItems.belongsTo(models.productVariants, {
+        foreignKey: "variantId",
+        as: "productVariants",
+        targetKey: "variantId",
+        onDelete: "CASCADE",
+      });
       orderItems.belongsTo(models.productDiscount, {
         foreignKey: "discountId",
         as: "discount",
@@ -35,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       productId: {
+        type: DataTypes.UUID,
+      },
+      variantId: {
         type: DataTypes.UUID,
       },
       discountId: {
