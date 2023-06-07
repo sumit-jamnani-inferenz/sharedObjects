@@ -45,15 +45,15 @@ module.exports = {
       },
       shippingWeight: {
         type: Sequelize.FLOAT,
-        allowNull: false,
+        // allowNull: false,
       },
       shippingWeightUOM: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       itemDimensions: {
         type: Sequelize.JSON,
-        allowNull: false,
+        // allowNull: false,
       },
       isActive: {
         type: Sequelize.BOOLEAN,

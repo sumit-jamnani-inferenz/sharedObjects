@@ -88,7 +88,7 @@ module.exports = {
       },
       searchKeywords: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
-        allowNull: false,
+        // allowNull: false,
       },
       unit: {
         type: Sequelize.TEXT,
@@ -98,11 +98,11 @@ module.exports = {
       },
       productDisplayImage: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       thumbnailImage: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       imageURL: {
         type: Sequelize.ARRAY(Sequelize.TEXT),

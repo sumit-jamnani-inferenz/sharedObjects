@@ -55,15 +55,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       shippingWeight: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        // allowNull: false,
       },
       shippingWeightUOM: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       itemDimensions: {
         type: DataTypes.JSON,
-        allowNull: false,
+        // allowNull: false,
       },
       isActive: {
         type: DataTypes.BOOLEAN,

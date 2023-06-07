@@ -156,7 +156,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       searchKeywords: {
         type: DataTypes.ARRAY(DataTypes.TEXT),
-        allowNull: false,
+        // allowNull: false,
       },
       unit: {
         type: DataTypes.TEXT,
@@ -166,11 +166,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       productDisplayImage: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       thumbnailImage: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       imageURL: {
         type: DataTypes.ARRAY(DataTypes.TEXT),
