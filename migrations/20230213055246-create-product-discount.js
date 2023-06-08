@@ -26,12 +26,12 @@ module.exports = {
       discountDescription: {
         type: Sequelize.TEXT,
       },
-      discountPercentage: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
-      },
       discountType: {
         type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      totalDiscount: {
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       discountStartDate: {
@@ -40,6 +40,10 @@ module.exports = {
       },
       discountEndDate: {
         type: Sequelize.DATE,
+        allowNull: false,
+      },
+      offeredBy: {
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       isActive: {

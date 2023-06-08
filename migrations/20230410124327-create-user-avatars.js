@@ -24,7 +24,7 @@ module.exports = {
         allowNull: false,
       },
       avatarIndex: {
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       skinColor: {

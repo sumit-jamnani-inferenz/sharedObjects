@@ -79,7 +79,7 @@ module.exports = {
         allowNull: false,
       },
       specifications: {
-        type: Sequelize.TEXT,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
         allowNull: false,
       },
       productMaterial: {
