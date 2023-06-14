@@ -24,7 +24,6 @@ module.exports = {
       },
       thumbnailImage: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       isActive: {
         type: Sequelize.BOOLEAN,

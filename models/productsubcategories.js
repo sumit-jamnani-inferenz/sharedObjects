@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       thumbnailImage: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       isActive: {
         type: DataTypes.BOOLEAN,
