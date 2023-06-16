@@ -48,18 +48,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.DATE,
         get() {
-          return moment(this.dataValues.createdAt).format(
-            "DD-MM-YYYY hh:mm:ss"
-          ); // 'D MMM YYYY, LT'
+          return moment(this.dataValues.createdAt).format("DD-MM-YYYY, LT"); // 'D MMM YYYY, LT'
         },
       },
       updatedAt: {
         allowNull: false,
         type: DataTypes.DATE,
         get() {
-          return moment(this.dataValues.createdAt).format(
-            "DD-MM-YYYY hh:mm:ss"
-          ); // 'D MMM YYYY, LT'
+          return moment(this.dataValues.createdAt).format("DD-MM-YYYY, LT"); // 'D MMM YYYY, LT'
         },
       },
     },
