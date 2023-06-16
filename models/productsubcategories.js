@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const moment = require("moment");
 module.exports = (sequelize, DataTypes) => {
   class productSubCategories extends Model {
     static associate(models) {
@@ -42,6 +43,24 @@ module.exports = (sequelize, DataTypes) => {
       },
       misc: {
         type: DataTypes.JSON,
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        get() {
+          return moment(this.dataValues.createdAt).format(
+            "DD MM YYYY HH:mm:ss"
+          ); // 'D MMM YYYY, LT'
+        },
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        get() {
+          return moment(this.dataValues.createdAt).format(
+            "DD MM YYYY HH:mm:ss"
+          ); // 'D MMM YYYY, LT'
+        },
       },
     },
     {
