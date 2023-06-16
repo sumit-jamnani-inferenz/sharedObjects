@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         get() {
           return moment(this.dataValues.createdAt).format(
-            "DD MM YYYY HH:mm:ss"
+            "DD-MM-YYYY HH:mm:ss"
           ); // 'D MMM YYYY, LT'
         },
       },
