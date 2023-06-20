@@ -49,6 +49,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: DataTypes.TEXT,
+      },
       discountStartDate: {
         type: DataTypes.DATE,
         allowNull: false,

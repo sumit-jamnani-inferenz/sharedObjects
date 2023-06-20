@@ -34,6 +34,9 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+      },
       discountStartDate: {
         type: Sequelize.DATE,
         allowNull: false,
