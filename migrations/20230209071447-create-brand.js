@@ -26,6 +26,10 @@ module.exports = {
       brandWallet: {
         type: Sequelize.TEXT,
       },
+      isOnboarded: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,

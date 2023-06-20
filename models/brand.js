@@ -74,6 +74,10 @@ module.exports = (sequelize, DataTypes) => {
       brandWallet: {
         type: DataTypes.TEXT,
       },
+      isOnboarded: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
       isActive: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
