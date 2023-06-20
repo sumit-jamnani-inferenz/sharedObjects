@@ -78,6 +78,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
+      isRejected: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      rejectReason: {
+        type: DataTypes.TEXT,
+      },
+      actionDate: {
+        type: DataTypes.DATE,
+      },
       isActive: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

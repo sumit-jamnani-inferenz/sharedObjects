@@ -30,6 +30,16 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
+      isRejected: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      rejectReason: {
+        type: Sequelize.TEXT,
+      },
+      actionDate: {
+        type: Sequelize.DATE,
+      },
       isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
