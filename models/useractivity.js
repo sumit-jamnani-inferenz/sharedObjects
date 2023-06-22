@@ -45,6 +45,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      visitedCount: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       activityTime: {
         type: DataTypes.DATE,
         allowNull: false,

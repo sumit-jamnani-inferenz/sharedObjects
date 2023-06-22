@@ -40,6 +40,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      visitedCount: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       activityTime: {
         type: Sequelize.DATE,
         allowNull: false,
