@@ -18,12 +18,23 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      accountWallet: {
-        type: Sequelize.TEXT,
+      estateId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "styloEstates",
+          key: "estateId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
-      blockNumber: {
-        type: Sequelize.TEXT,
-        allowNull: false,
+      productId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productDetails",
+          key: "productId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       activityType: {
         type: Sequelize.TEXT,
@@ -33,15 +44,9 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      NFTMetadata: {
-        type: Sequelize.TEXT,
+      misc: {
+        type: Sequelize.JSON,
       },
-      blockTimestamp: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-
-      misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

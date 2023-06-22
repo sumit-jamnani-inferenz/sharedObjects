@@ -9,6 +9,18 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
+      userActivity.belongsTo(models.styloEstates, {
+        foreignKey: "estateId",
+        as: "styloEstates",
+        targetKey: "estateId",
+        onDelete: "CASCADE",
+      });
+      userActivity.belongsTo(models.productDetails, {
+        foreignKey: "productId",
+        as: "productDetails",
+        targetKey: "productId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userActivity.init(
@@ -21,13 +33,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountId: {
         type: DataTypes.UUID,
-      },
-      accountWallet: {
-        type: DataTypes.TEXT,
-      },
-      blockNumber: {
-        type: DataTypes.TEXT,
         allowNull: false,
+      },
+      estateId: {
+        type: DataTypes.UUID,
+      },
+      productId: {
+        type: DataTypes.UUID,
       },
       activityType: {
         type: DataTypes.TEXT,
@@ -37,15 +49,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      NFTMetadata: {
-        type: DataTypes.TEXT,
+      misc: {
+        type: DataTypes.JSON,
       },
-      blockTimestamp: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-
-      misc: DataTypes.JSON,
     },
     {
       sequelize,

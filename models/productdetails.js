@@ -93,6 +93,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "productId",
         onDelete: "CASCADE",
       });
+      productDetails.hasMany(models.userActivity, {
+        foreignKey: "productId",
+        as: "purchasedBy",
+        sourceKey: "productId",
+        onDelete: "CASCADE",
+      });
     }
   }
   productDetails.init(
