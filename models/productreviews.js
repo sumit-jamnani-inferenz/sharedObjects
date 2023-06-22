@@ -50,6 +50,10 @@ module.exports = (sequelize, DataTypes) => {
       videoURL: {
         type: DataTypes.ARRAY(DataTypes.TEXT),
       },
+      isVisible: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
       misc: {
         type: DataTypes.JSON,
       },

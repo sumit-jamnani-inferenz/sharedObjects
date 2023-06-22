@@ -44,6 +44,10 @@ module.exports = {
       videoURL: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
       },
+      isVisible: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       misc: {
         type: Sequelize.JSON,
       },
