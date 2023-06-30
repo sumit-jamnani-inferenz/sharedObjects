@@ -22,4 +22,4 @@ async function dbConnect() {
 }
 
 dbConnect();
-module.exports = sequelize;
+module.exports = { sequelize };
