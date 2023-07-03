@@ -47,6 +47,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "brandId",
         onDelete: "CASCADE",
       });
+      brand.hasMany(models.orderItems, {
+        foreignKey: "brandId",
+        as: "orderItems",
+        sourceKey: "brandId",
+        onDelete: "CASCADE",
+      });
     }
   }
   brand.init(

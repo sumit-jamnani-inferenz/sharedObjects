@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "invoiceId",
         onDelete: "CASCADE",
       });
+      orderItems.belongsTo(models.brand, {
+        foreignKey: "brandId",
+        as: "brand",
+        targetKey: "brandId",
+        onDelete: "CASCADE",
+      });
       orderItems.belongsTo(models.productDetails, {
         foreignKey: "productId",
         as: "productDetails",
@@ -38,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       invoiceId: {
+        type: DataTypes.UUID,
+      },
+      brandId: {
         type: DataTypes.UUID,
       },
       productId: {
