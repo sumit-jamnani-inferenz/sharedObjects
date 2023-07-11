@@ -110,6 +110,9 @@ module.exports = (sequelize, DataTypes) => {
       replacementDate: {
         type: DataTypes.DATE,
       },
+      replacementCompletedDate: {
+        type: DataTypes.DATE,
+      },
       isRefunded: {
         type: DataTypes.BOOLEAN,
       },

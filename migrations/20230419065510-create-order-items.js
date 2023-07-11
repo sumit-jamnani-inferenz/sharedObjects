@@ -106,6 +106,9 @@ module.exports = {
       replacementDate: {
         type: Sequelize.DATE,
       },
+      replacementCompletedDate: {
+        type: Sequelize.DATE,
+      },
       isRefunded: {
         type: Sequelize.BOOLEAN,
       },
