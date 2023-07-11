@@ -107,6 +107,9 @@ module.exports = (sequelize, DataTypes) => {
       replacementReason: {
         type: DataTypes.TEXT,
       },
+      replacementDate: {
+        type: DataTypes.DATE,
+      },
       isRefunded: {
         type: DataTypes.BOOLEAN,
       },
