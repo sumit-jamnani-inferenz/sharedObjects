@@ -94,11 +94,23 @@ module.exports = {
       returnReason: {
         type: Sequelize.TEXT,
       },
+      returnDate: {
+        type: Sequelize.DATE,
+      },
       isReplaced: {
         type: Sequelize.BOOLEAN,
       },
       replacementReason: {
         type: Sequelize.TEXT,
+      },
+      replacementDate: {
+        type: Sequelize.DATE,
+      },
+      isRefunded: {
+        type: Sequelize.BOOLEAN,
+      },
+      refundDate: {
+        type: Sequelize.DATE,
       },
       orderStatus: {
         type: Sequelize.TEXT,
