@@ -98,11 +98,20 @@ module.exports = (sequelize, DataTypes) => {
       returnReason: {
         type: DataTypes.TEXT,
       },
+      returnDate: {
+        type: DataTypes.DATE,
+      },
       isReplaced: {
         type: DataTypes.BOOLEAN,
       },
       replacementReason: {
         type: DataTypes.TEXT,
+      },
+      isRefunded: {
+        type: DataTypes.BOOLEAN,
+      },
+      refundDate: {
+        type: DataTypes.DATE,
       },
       orderStatus: {
         type: DataTypes.TEXT,
