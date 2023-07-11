@@ -98,6 +98,12 @@ module.exports = (sequelize, DataTypes) => {
       returnReason: {
         type: DataTypes.TEXT,
       },
+      isReplaced: {
+        type: DataTypes.BOOLEAN,
+      },
+      replacementReason: {
+        type: DataTypes.TEXT,
+      },
       orderStatus: {
         type: DataTypes.TEXT,
         allowNull: false,

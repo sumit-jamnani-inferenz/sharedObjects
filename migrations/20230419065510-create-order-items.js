@@ -94,6 +94,12 @@ module.exports = {
       returnReason: {
         type: Sequelize.TEXT,
       },
+      isReplaced: {
+        type: Sequelize.BOOLEAN,
+      },
+      replacementReason: {
+        type: Sequelize.TEXT,
+      },
       orderStatus: {
         type: Sequelize.TEXT,
         allowNull: false,
