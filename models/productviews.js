@@ -37,10 +37,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      isVisible: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
       misc: {
         type: DataTypes.JSON,
       },

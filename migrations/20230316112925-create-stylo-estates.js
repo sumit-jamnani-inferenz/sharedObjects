@@ -57,10 +57,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      isAvailable: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-      },
       misc: {
         type: Sequelize.JSON,
       },
