@@ -51,9 +51,6 @@ module.exports = (sequelize, DataTypes) => {
       floor: {
         type: DataTypes.TEXT,
       },
-      sector: {
-        type: DataTypes.INTEGER,
-      },
       estateType: {
         type: DataTypes.TEXT,
         allowNull: false,

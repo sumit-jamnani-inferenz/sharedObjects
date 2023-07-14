@@ -34,9 +34,6 @@ module.exports = {
       floor: {
         type: Sequelize.TEXT,
       },
-      sector: {
-        type: Sequelize.INTEGER,
-      },
       estateType: {
         type: Sequelize.TEXT,
         allowNull: false,
