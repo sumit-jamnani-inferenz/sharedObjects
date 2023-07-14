@@ -48,6 +48,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      floor: {
+        type: DataTypes.TEXT,
+      },
       sector: {
         type: DataTypes.INTEGER,
       },
