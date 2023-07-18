@@ -22,6 +22,9 @@ module.exports = {
         type: Sequelize.UUID,
         allowNull: false,
       },
+      rzp_customerId: {
+        type: Sequelize.TEXT,
+      },
       accountUserName: {
         type: Sequelize.TEXT,
         allowNull: false,
