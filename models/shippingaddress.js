@@ -27,15 +27,17 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountId: {
         type: DataTypes.UUID,
+        allowNull: false,
       },
-      GEOCode: {
-        type: DataTypes.TEXT,
-      },
-      street1: {
+      recipientName: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      street2: {
+      addressLine1: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      addressLine2: {
         type: DataTypes.TEXT,
       },
       city: {
@@ -46,11 +48,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      postalCode: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       country: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      postalCode: {
+      contactNumber: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
@@ -58,8 +64,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-
-      misc: DataTypes.JSON,
+      misc: { type: DataTypes.JSON },
     },
     {
       sequelize,

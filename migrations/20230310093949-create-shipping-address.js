@@ -18,14 +18,15 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      GEOCode: {
-        type: Sequelize.TEXT,
-      },
-      street1: {
+      recipientName: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      street2: {
+      addressLine1: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      addressLine2: {
         type: Sequelize.TEXT,
       },
       city: {
@@ -36,11 +37,15 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      postalCode: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       country: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      postalCode: {
+      contactNumber: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
@@ -48,8 +53,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-
-      misc: Sequelize.JSON,
+      misc: { type: Sequelize.JSON },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
