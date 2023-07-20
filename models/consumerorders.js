@@ -7,17 +7,27 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "accountId",
         as: "user",
         targetKey: "accountId",
-        onDelete: "CASCADE",
       });
       consumerOrders.belongsTo(models.shippingAddress, {
         foreignKey: "shippingAddressId",
         as: "shippingAddress",
         targetKey: "shippingAddressId",
-        onDelete: "CASCADE",
       });
       consumerOrders.hasMany(models.orderItems, {
         foreignKey: "invoiceId",
         as: "orderItems",
+        sourceKey: "invoiceId",
+        onDelete: "CASCADE",
+      });
+      consumerOrders.hasMany(models.orderPayments, {
+        foreignKey: "invoiceId",
+        as: "orderPayments",
+        sourceKey: "invoiceId",
+        onDelete: "CASCADE",
+      });
+      consumerOrders.hasMany(models.returnReplacementOrders, {
+        foreignKey: "invoiceId",
+        as: "returnReplacementOrders",
         sourceKey: "invoiceId",
         onDelete: "CASCADE",
       });
@@ -31,24 +41,13 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true,
       },
-      accountId: {
-        type: DataTypes.UUID,
-      },
-      shippingAddressId: {
-        type: DataTypes.UUID,
-      },
       orderId: {
         type: DataTypes.TEXT,
-      },
-      paymentId: {
-        type: DataTypes.TEXT,
-      },
-      productsQty: {
-        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      accountWallet: {
-        type: DataTypes.TEXT,
+      accountId: {
+        type: DataTypes.UUID,
+        allowNull: false,
       },
       totalAmount: {
         type: DataTypes.INTEGER,
@@ -58,21 +57,33 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      orderStatus: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      paymentStatus: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      paymentMethod: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      shippingAddressId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+      },
       blockchianTID: {
         type: DataTypes.TEXT,
       },
-      BAWalletAddress: {
+      walletAddress: {
         type: DataTypes.TEXT,
       },
       blockNumber: {
         type: DataTypes.TEXT,
       },
-      BLEpochTimestamp: {
-        type: DataTypes.TEXT,
-      },
-      transactionStatus: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      epochTimestamp: {
+        type: DataTypes.INTEGER,
       },
       misc: {
         type: DataTypes.JSON,

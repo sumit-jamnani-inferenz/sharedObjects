@@ -1,28 +1,80 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('returnReplacementOrders', {
-      id: {
+    await queryInterface.createTable("returnReplacementOrders", {
+      requestId: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
       },
-      democolumn: {
-        type: Sequelize.STRING
+      invoiceId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "consumerOrders",
+          key: "invoiceId",
+        },
+      },
+      orderItemId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "orderItems",
+          key: "orderItemId",
+        },
+      },
+      accountId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "userAccounts",
+          key: "accountId",
+        },
+      },
+      productId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "productDetails",
+          key: "productId",
+        },
+      },
+      variantId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "productVariants",
+          key: "variantId",
+        },
+      },
+      requestType: {
+        type: Sequelize.UUID,
+        allowNull: false,
+      },
+      reason: {
+        type: Sequelize.UUID,
+        allowNull: false,
+      },
+      status: {
+        type: Sequelize.UUID,
+        allowNull: false,
+      },
+      misc: {
+        type: Sequelize.JSON,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('returnReplacementOrders');
-  }
+    await queryInterface.dropTable("returnReplacementOrders");
+  },
 };

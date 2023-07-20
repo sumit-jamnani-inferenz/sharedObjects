@@ -93,6 +93,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "accountId",
         onDelete: "CASCADE",
       });
+      userAccounts.hasMany(models.returnReplacementOrders, {
+        foreignKey: "accountId",
+        as: "returnReplacementOrders",
+        sourceKey: "accountId",
+        onDelete: "CASCADE",
+      });
     }
   }
   userAccounts.init(

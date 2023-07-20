@@ -7,31 +7,26 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "invoiceId",
         as: "consumerOrders",
         targetKey: "invoiceId",
-        onDelete: "CASCADE",
       });
       orderItems.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
       orderItems.belongsTo(models.productDetails, {
         foreignKey: "productId",
         as: "productDetails",
         targetKey: "productId",
-        onDelete: "CASCADE",
       });
       orderItems.belongsTo(models.productVariants, {
         foreignKey: "variantId",
         as: "productVariants",
         targetKey: "variantId",
-        onDelete: "CASCADE",
       });
       orderItems.belongsTo(models.productDiscount, {
         foreignKey: "discountId",
         as: "discount",
         targetKey: "discountId",
-        onDelete: "CASCADE",
       });
       orderItems.hasMany(models.returnReplacementOrders, {
         foreignKey: "orderItemId",
@@ -51,12 +46,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       invoiceId: {
         type: DataTypes.UUID,
+        allowNull: false,
       },
       brandId: {
         type: DataTypes.UUID,
+        allowNull: false,
       },
       productId: {
         type: DataTypes.UUID,
+        allowNull: false,
       },
       variantId: {
         type: DataTypes.UUID,
@@ -97,33 +95,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       trackingNumber: {
         type: DataTypes.TEXT,
-      },
-      isReturned: {
-        type: DataTypes.BOOLEAN,
-      },
-      returnReason: {
-        type: DataTypes.TEXT,
-      },
-      returnDate: {
-        type: DataTypes.DATE,
-      },
-      isReplaced: {
-        type: DataTypes.BOOLEAN,
-      },
-      replacementReason: {
-        type: DataTypes.TEXT,
-      },
-      replacementDate: {
-        type: DataTypes.DATE,
-      },
-      replacementCompletedDate: {
-        type: DataTypes.DATE,
-      },
-      isRefunded: {
-        type: DataTypes.BOOLEAN,
-      },
-      refundDate: {
-        type: DataTypes.DATE,
       },
       orderStatus: {
         type: DataTypes.TEXT,

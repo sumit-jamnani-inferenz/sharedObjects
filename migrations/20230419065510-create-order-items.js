@@ -10,31 +10,28 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4,
       },
       invoiceId: {
+        allowNull: false,
         type: Sequelize.UUID,
         references: {
           model: "consumerOrders",
           key: "invoiceId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       brandId: {
+        allowNull: false,
         type: Sequelize.UUID,
         references: {
           model: "brand",
           key: "brandId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       productId: {
+        allowNull: false,
         type: Sequelize.UUID,
         references: {
           model: "productDetails",
           key: "productId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       variantId: {
         type: Sequelize.UUID,
@@ -42,8 +39,6 @@ module.exports = {
           model: "productVariants",
           key: "variantId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       discountId: {
         type: Sequelize.UUID,
@@ -51,8 +46,6 @@ module.exports = {
           model: "productDiscount",
           key: "discountId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       productPrice: {
         type: Sequelize.FLOAT,
@@ -87,33 +80,6 @@ module.exports = {
       },
       trackingNumber: {
         type: Sequelize.TEXT,
-      },
-      isReturned: {
-        type: Sequelize.BOOLEAN,
-      },
-      returnReason: {
-        type: Sequelize.TEXT,
-      },
-      returnDate: {
-        type: Sequelize.DATE,
-      },
-      isReplaced: {
-        type: Sequelize.BOOLEAN,
-      },
-      replacementReason: {
-        type: Sequelize.TEXT,
-      },
-      replacementDate: {
-        type: Sequelize.DATE,
-      },
-      replacementCompletedDate: {
-        type: Sequelize.DATE,
-      },
-      isRefunded: {
-        type: Sequelize.BOOLEAN,
-      },
-      refundDate: {
-        type: Sequelize.DATE,
       },
       orderStatus: {
         type: Sequelize.TEXT,
