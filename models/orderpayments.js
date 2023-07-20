@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "invoiceId",
         as: "consumerOrders",
         targetKey: "invoiceId",
-        onDelete: "CASCADE",
       });
     }
   }
