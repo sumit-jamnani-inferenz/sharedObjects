@@ -63,15 +63,15 @@ module.exports = {
         },
       },
       requestType: {
-        type: Sequelize.UUID,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       reason: {
-        type: Sequelize.UUID,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       status: {
-        type: Sequelize.UUID,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       misc: {

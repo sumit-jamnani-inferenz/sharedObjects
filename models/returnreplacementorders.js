@@ -64,15 +64,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
       },
       requestType: {
-        type: DataTypes.UUID,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       reason: {
-        type: DataTypes.UUID,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       status: {
-        type: DataTypes.UUID,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       misc: {
