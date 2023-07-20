@@ -42,7 +42,20 @@ module.exports = {
         },
       },
       variantId: {
-        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "productVariants",
+          key: "variantId",
+        },
+      },
+      newProductId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productDetails",
+          key: "productId",
+        },
+      },
+      newVariantId: {
         type: Sequelize.UUID,
         references: {
           model: "productVariants",

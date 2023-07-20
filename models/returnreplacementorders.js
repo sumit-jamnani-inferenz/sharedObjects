@@ -56,7 +56,12 @@ module.exports = (sequelize, DataTypes) => {
       },
       variantId: {
         type: DataTypes.UUID,
-        allowNull: false,
+      },
+      newProductId: {
+        type: DataTypes.UUID,
+      },
+      newVariantId: {
+        type: DataTypes.UUID,
       },
       requestType: {
         type: DataTypes.UUID,
