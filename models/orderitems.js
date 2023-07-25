@@ -34,6 +34,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "orderItemId",
         onDelete: "CASCADE",
       });
+      orderItems.hasMany(models.orderStatusHistory, {
+        foreignKey: "orderItemId",
+        as: "orderStatusHistory",
+        sourceKey: "orderItemId",
+        onDelete: "CASCADE",
+      });
     }
   }
   orderItems.init(

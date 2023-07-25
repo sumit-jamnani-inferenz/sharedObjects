@@ -31,6 +31,12 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "invoiceId",
         onDelete: "CASCADE",
       });
+      consumerOrders.hasMany(models.orderStatusHistory, {
+        foreignKey: "invoiceId",
+        as: "orderStatusHistory",
+        sourceKey: "invoiceId",
+        onDelete: "CASCADE",
+      });
     }
   }
   consumerOrders.init(

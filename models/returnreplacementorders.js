@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "productVariants",
         targetKey: "variantId",
       });
+      returnReplacementOrders.hasMany(models.returnReplacementStatusHistory, {
+        foreignKey: "requestId",
+        as: "returnReplacementStatusHistory",
+        sourceKey: "requestId",
+      });
     }
   }
   returnReplacementOrders.init(
