@@ -106,6 +106,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      returnReplacementEndDate: {
+        type: DataTypes.DATE,
+      },
       misc: {
         type: DataTypes.JSON,
       },

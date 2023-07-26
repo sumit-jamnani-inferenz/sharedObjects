@@ -85,6 +85,9 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      returnReplacementEndDate: {
+        type: Sequelize.DATE,
+      },
       misc: {
         type: Sequelize.JSON,
       },
