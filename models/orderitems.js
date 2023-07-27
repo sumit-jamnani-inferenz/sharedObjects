@@ -40,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "orderItemId",
         onDelete: "CASCADE",
       });
+      orderItems.hasMany(models.refunds, {
+        foreignKey: "orderItemId",
+        as: "refunds",
+        sourceKey: "orderItemId",
+      });
     }
   }
   orderItems.init(

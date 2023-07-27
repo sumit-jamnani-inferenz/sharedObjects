@@ -1,45 +1,52 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class orderPayments extends Model {
+  class refunds extends Model {
     static associate(models) {
-      orderPayments.belongsTo(models.consumerOrders, {
-        foreignKey: "invoiceId",
-        as: "consumerOrders",
-        targetKey: "invoiceId",
+      refunds.belongsTo(models.orderItems, {
+        foreignKey: "orderItemId",
+        as: "orderItems",
+        targetKey: "orderItemId",
       });
-      orderPayments.hasMany(models.refunds, {
+      refunds.belongsTo(models.orderPayments, {
         foreignKey: "paymentId",
-        as: "refunds",
-        sourceKey: "paymentId",
+        as: "orderItems",
+        targetKey: "paymentId",
       });
     }
   }
-  orderPayments.init(
+  refunds.init(
     {
-      paymentId: {
+      refundId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
         primaryKey: true,
       },
-      invoiceId: {
+      orderItemId: {
         type: DataTypes.UUID,
         allowNull: false,
       },
-      transactionId: {
-        type: DataTypes.TEXT,
+      paymentId: {
+        type: DataTypes.UUID,
         allowNull: false,
       },
-      paymentAmount: {
+      refundAmount: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-      paymentStatus: {
+      refundMethod: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      paymentMethod: {
+      refundTransactionId: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      refundCompleteDate: {
+        type: DataTypes.DATE,
+      },
+      refundStatus: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
@@ -49,9 +56,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "orderPayments",
-      tableName: "orderPayments",
+      modelName: "refunds",
+      tableName: "refunds",
     }
   );
-  return orderPayments;
+  return refunds;
 };
