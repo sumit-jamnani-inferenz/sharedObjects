@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       refunds.belongsTo(models.orderPayments, {
         foreignKey: "paymentId",
-        as: "orderItems",
+        as: "orderPayments",
         targetKey: "paymentId",
       });
     }

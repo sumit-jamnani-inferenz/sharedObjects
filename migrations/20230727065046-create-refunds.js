@@ -10,12 +10,20 @@ module.exports = {
         primaryKey: true,
       },
       orderItemId: {
-        type: Sequelize.UUID,
         allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "orderItems",
+          key: "orderItemId",
+        },
       },
       paymentId: {
-        type: Sequelize.UUID,
         allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "orderPayments",
+          key: "paymentId",
+        },
       },
       refundAmount: {
         type: Sequelize.FLOAT,
