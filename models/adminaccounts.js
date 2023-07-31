@@ -33,6 +33,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
       },
+      rzp_customerId: {
+        type: DataTypes.TEXT,
+      },
       brandId: {
         type: DataTypes.UUID,
       },
