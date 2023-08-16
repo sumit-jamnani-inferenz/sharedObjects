@@ -24,8 +24,6 @@ module.exports = {
           model: "productDetails",
           key: "productId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       misc: {
         type: Sequelize.JSON,

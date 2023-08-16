@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "invoiceId",
         as: "consumerOrders",
         targetKey: "invoiceId",
+        onDelete: "CASCADE",
       });
       orderPayments.hasMany(models.refunds, {
         foreignKey: "paymentId",

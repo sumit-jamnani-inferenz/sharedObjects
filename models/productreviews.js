@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "accountId",
         as: "userAccounts",
         targetKey: "accountId",
-        onDelete: "CASCADE",
       });
     }
   }

@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "accountId",
         as: "user",
         targetKey: "accountId",
-        onDelete: "CASCADE",
       });
 
       userAnswers.belongsTo(models.questionMaster, {

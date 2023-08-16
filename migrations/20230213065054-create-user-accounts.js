@@ -15,8 +15,6 @@ module.exports = {
           model: "roles",
           key: "roleId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       mappedUserId: {
         type: Sequelize.UUID,

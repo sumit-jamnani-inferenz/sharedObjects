@@ -17,25 +17,21 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "invoiceId",
         as: "orderItems",
         sourceKey: "invoiceId",
-        onDelete: "CASCADE",
       });
       consumerOrders.hasMany(models.orderPayments, {
         foreignKey: "invoiceId",
         as: "orderPayments",
         sourceKey: "invoiceId",
-        onDelete: "CASCADE",
       });
       consumerOrders.hasMany(models.returnReplacementOrders, {
         foreignKey: "invoiceId",
         as: "returnReplacementOrders",
         sourceKey: "invoiceId",
-        onDelete: "CASCADE",
       });
       consumerOrders.hasMany(models.orderStatusHistory, {
         foreignKey: "invoiceId",
         as: "orderStatusHistory",
         sourceKey: "invoiceId",
-        onDelete: "CASCADE",
       });
     }
   }

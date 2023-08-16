@@ -16,8 +16,6 @@ module.exports = {
           model: "brand",
           key: "brandId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       discountName: {
         type: Sequelize.TEXT,

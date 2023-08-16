@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "invoiceId",
         as: "consumerOrders",
         targetKey: "invoiceId",
+        onDelete: "CASCADE",
       });
       orderItems.belongsTo(models.brand, {
         foreignKey: "brandId",
@@ -32,13 +33,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "orderItemId",
         as: "returnReplacementOrders",
         sourceKey: "orderItemId",
-        onDelete: "CASCADE",
       });
       orderItems.hasMany(models.orderStatusHistory, {
         foreignKey: "orderItemId",
         as: "orderStatusHistory",
         sourceKey: "orderItemId",
-        onDelete: "CASCADE",
       });
       orderItems.hasMany(models.refunds, {
         foreignKey: "orderItemId",

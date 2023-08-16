@@ -16,8 +16,6 @@ module.exports = {
           model: "userAccounts",
           key: "accountId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       questionId: {
         type: Sequelize.UUID,

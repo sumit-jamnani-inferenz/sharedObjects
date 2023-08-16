@@ -7,14 +7,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
       storeDisplay.hasMany(models.productLocation, {
         foreignKey: "displayId",
         as: "productLocation",
         sourceKey: "displayId",
-        onDelete: "CASCADE",
-      });
+    });
     }
   }
   storeDisplay.init(

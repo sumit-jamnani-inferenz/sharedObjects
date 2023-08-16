@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "cartId",
         as: "cartItems",
         sourceKey: "cartId",
-        onDelete: "CASCADE",
       });
     }
   }

@@ -7,103 +7,86 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
       productDetails.belongsTo(models.productCategories, {
         foreignKey: "productCategoryId",
         as: "category",
         targetKey: "productCategoryId",
-        onDelete: "CASCADE",
       });
       productDetails.belongsTo(models.productSubCategories, {
         foreignKey: "productSubCategoryId",
         as: "subCategory",
         targetKey: "productSubCategoryId",
-        onDelete: "CASCADE",
       });
       productDetails.belongsTo(models.productDiscount, {
         foreignKey: "discountId",
         as: "discount",
         targetKey: "discountId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productVariants, {
         foreignKey: "productSKU",
         as: "variants",
         sourceKey: "productSKU",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productsPair, {
         foreignKey: "pairedProductId",
         as: "pairing",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productsPair, {
         foreignKey: "pairedProductId",
         as: "pairedProduct",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.userChoices, {
         foreignKey: "productId",
         as: "Choices",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productTags, {
         foreignKey: "productId",
         as: "productTags",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.wishlistItems, {
         foreignKey: "productId",
         as: "wishlistItems",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.cartItems, {
         foreignKey: "productId",
         as: "cartItems",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.orderItems, {
         foreignKey: "productId",
         as: "orderItems",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productLocation, {
         foreignKey: "productId",
         as: "productLocation",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productReviews, {
         foreignKey: "productId",
         as: "productReviews",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.productViews, {
         foreignKey: "productId",
         as: "productViews",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.userActivity, {
         foreignKey: "productId",
         as: "purchasedBy",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
       productDetails.hasMany(models.returnReplacementOrders, {
         foreignKey: "productId",
         as: "returnReplacementOrders",
         sourceKey: "productId",
-        onDelete: "CASCADE",
       });
     }
   }

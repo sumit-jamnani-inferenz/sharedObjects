@@ -21,11 +21,9 @@ module.exports = {
       },
       gender: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       dob: {
         type: Sequelize.DATEONLY,
-        allowNull: false,
       },
       bodyType: {
         type: Sequelize.TEXT,

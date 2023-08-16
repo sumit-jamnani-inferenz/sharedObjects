@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "questionId",
         as: "answers",
         targetKey: "questionId",
-        onDelete: "CASCADE",
       });
     }
   }

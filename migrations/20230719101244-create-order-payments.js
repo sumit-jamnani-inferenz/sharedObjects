@@ -16,6 +16,8 @@ module.exports = {
           model: "consumerOrders",
           key: "invoiceId",
         },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       transactionId: {
         type: Sequelize.TEXT,

@@ -23,8 +23,6 @@ module.exports = {
           model: "brand",
           key: "brandId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       discountId: {
         type: Sequelize.UUID,
@@ -33,8 +31,6 @@ module.exports = {
           model: "productDiscount",
           key: "discountId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       productCategoryId: {
         type: Sequelize.UUID,
@@ -43,8 +39,6 @@ module.exports = {
           model: "productCategories",
           key: "productCategoryId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       productSubCategoryId: {
         type: Sequelize.UUID,
@@ -53,8 +47,6 @@ module.exports = {
           model: "productSubCategories",
           key: "productSubCategoryId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       productName: {
         type: Sequelize.TEXT,

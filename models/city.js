@@ -7,13 +7,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "cityId",
         as: "malls",
         sourceKey: "cityId",
-        onDelete: "CASCADE",
       });
       city.hasMany(models.styloEstates, {
         foreignKey: "cityId",
         as: "styloEstates",
         sourceKey: "cityId",
-        onDelete: "CASCADE",
       });
     }
   }

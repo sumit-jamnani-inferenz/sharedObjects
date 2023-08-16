@@ -19,13 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "estateId",
         as: "styloEstates",
         sourceKey: "estateId",
-        onDelete: "CASCADE",
       });
       styloEstates.hasMany(models.userActivity, {
         foreignKey: "estateId",
         as: "userActivity",
         sourceKey: "estateId",
-        onDelete: "CASCADE",
       });
     }
   }

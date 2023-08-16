@@ -7,11 +7,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "orderItemId",
         as: "orderItems",
         targetKey: "orderItemId",
+        onDelete: "CASCADE",
       });
       refunds.belongsTo(models.orderPayments, {
         foreignKey: "paymentId",
         as: "orderPayments",
         targetKey: "paymentId",
+        onDelete: "CASCADE",
       });
     }
   }

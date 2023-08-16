@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "accountId",
         as: "lobbyParticipant",
         targetKey: "accountId",
-        onDelete: "CASCADE",
       });
       lobbyInfo.belongsTo(models.userLobby, {
         foreignKey: "lobbyId",

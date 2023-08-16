@@ -7,25 +7,21 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "estateId",
         as: "estate",
         targetKey: "estateId",
-        onDelete: "CASCADE",
       });
       leasedEstates.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
       leasedEstates.belongsTo(models.styloContracts, {
         foreignKey: "contractId",
         as: "contract",
         targetKey: "contractId",
-        onDelete: "CASCADE",
       });
       leasedEstates.hasMany(models.orgPayments, {
         foreignKey: "leaseId",
         as: "payments",
         sourceKey: "leaseId",
-        onDelete: "CASCADE",
       });
     }
   }

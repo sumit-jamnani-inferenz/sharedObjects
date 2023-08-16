@@ -25,11 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       gender: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       dob: {
         type: DataTypes.DATEONLY,
-        allowNull: false,
       },
       bodyType: {
         type: DataTypes.TEXT,

@@ -13,13 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "variantId",
         as: "orderItems",
         sourceKey: "variantId",
-        onDelete: "CASCADE",
       });
       productVariants.hasMany(models.returnReplacementOrders, {
         foreignKey: "variantId",
         as: "returnReplacementOrders",
         sourceKey: "variantId",
-        onDelete: "CASCADE",
       });
     }
   }

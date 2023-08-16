@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "productSubCategoryId",
         as: "products",
         sourceKey: "productSubCategoryId",
-        onDelete: "CASCADE",
       });
     }
   }

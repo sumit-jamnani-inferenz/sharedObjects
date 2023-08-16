@@ -7,14 +7,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "roleId",
         as: "role",
         targetKey: "roleId",
-        onDelete: "CASCADE",
       });
 
       adminAccounts.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
     }
   }

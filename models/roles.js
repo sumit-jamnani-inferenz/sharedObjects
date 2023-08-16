@@ -7,14 +7,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "roleId",
         as: "users",
         sourceKey: "roleId",
-        onDelete: "CASCADE",
       });
 
       roles.hasMany(models.adminAccounts, {
         foreignKey: "roleId",
         as: "adminUsers",
         sourceKey: "roleId",
-        onDelete: "CASCADE",
       });
     }
   }

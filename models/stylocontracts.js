@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "contractId",
         as: "leasedEstates",
         sourceKey: "contractId",
-        onDelete: "CASCADE",
       });
     }
   }

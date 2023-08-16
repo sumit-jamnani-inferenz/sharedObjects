@@ -7,19 +7,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
-        onDelete: "CASCADE",
       });
       productCategories.hasMany(models.productSubCategories, {
         foreignKey: "productCategoryId",
         as: "productSubCategories",
         sourceKey: "productCategoryId",
-        onDelete: "CASCADE",
       });
       productCategories.hasMany(models.productDetails, {
         foreignKey: "productCategoryId",
         as: "products",
         sourceKey: "productCategoryId",
-        onDelete: "CASCADE",
       });
     }
   }

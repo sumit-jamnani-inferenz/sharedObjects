@@ -15,8 +15,6 @@ module.exports = {
           model: "roles",
           key: "roleId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       mappedUserId: {
         type: Sequelize.UUID,
@@ -31,8 +29,6 @@ module.exports = {
           model: "brand",
           key: "brandId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       accountName: {
         type: Sequelize.TEXT,

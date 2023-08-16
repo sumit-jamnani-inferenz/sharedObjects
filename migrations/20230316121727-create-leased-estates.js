@@ -15,8 +15,6 @@ module.exports = {
           model: "styloEstates",
           key: "estateId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       brandId: {
         type: Sequelize.UUID,
@@ -24,8 +22,6 @@ module.exports = {
           model: "brand",
           key: "brandId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       contractId: {
         type: Sequelize.UUID,
@@ -33,8 +29,6 @@ module.exports = {
           model: "styloContracts",
           key: "contractId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       leasingType: {
         type: Sequelize.TEXT,

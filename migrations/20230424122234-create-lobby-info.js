@@ -24,8 +24,6 @@ module.exports = {
           model: "userAccounts",
           key: "accountId",
         },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
       },
       playerId: {
         type: Sequelize.TEXT,

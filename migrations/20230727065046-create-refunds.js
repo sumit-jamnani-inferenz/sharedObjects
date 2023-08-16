@@ -16,6 +16,8 @@ module.exports = {
           model: "orderItems",
           key: "orderItemId",
         },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       paymentId: {
         allowNull: false,
@@ -24,6 +26,8 @@ module.exports = {
           model: "orderPayments",
           key: "paymentId",
         },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       refundAmount: {
         type: Sequelize.FLOAT,

@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "accountId",
         as: "user",
         targetKey: "accountId",
-        onDelete: "CASCADE",
       });
       userActivity.belongsTo(models.styloEstates, {
         foreignKey: "estateId",

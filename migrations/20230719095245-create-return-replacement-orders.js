@@ -16,6 +16,8 @@ module.exports = {
           model: "consumerOrders",
           key: "invoiceId",
         },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       orderItemId: {
         allowNull: false,
@@ -24,6 +26,8 @@ module.exports = {
           model: "orderItems",
           key: "orderItemId",
         },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       accountId: {
         allowNull: false,

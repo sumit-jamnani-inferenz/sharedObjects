@@ -9,49 +9,41 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "brandId",
         as: "discounts",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.productDetails, {
         foreignKey: "brandId",
         as: "products",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.adminAccounts, {
         foreignKey: "brandId",
         as: "users",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.productCategories, {
         foreignKey: "brandId",
         as: "productCategories",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.leasedEstates, {
         foreignKey: "brandId",
         as: "leasedEstates",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.orgPayments, {
         foreignKey: "brandId",
         as: "payments",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.storeDisplay, {
         foreignKey: "brandId",
         as: "storeDisplay",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
       brand.hasMany(models.orderItems, {
         foreignKey: "brandId",
         as: "orderItems",
         sourceKey: "brandId",
-        onDelete: "CASCADE",
       });
     }
   }
