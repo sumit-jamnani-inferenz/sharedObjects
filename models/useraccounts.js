@@ -109,7 +109,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountName: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       accountEmail: {
         type: DataTypes.TEXT,

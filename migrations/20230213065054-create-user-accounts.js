@@ -29,7 +29,6 @@ module.exports = {
       },
       accountName: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       accountEmail: {
         type: Sequelize.TEXT,
