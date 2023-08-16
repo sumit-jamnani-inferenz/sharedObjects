@@ -134,6 +134,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
+      signUpSource: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       misc: DataTypes.JSON,
     },
     {

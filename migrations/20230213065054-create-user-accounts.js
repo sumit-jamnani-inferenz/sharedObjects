@@ -54,6 +54,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
+      signUpSource: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
