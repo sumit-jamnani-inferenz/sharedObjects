@@ -88,6 +88,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "returnReplacementOrders",
         sourceKey: "productId",
       });
+      productDetails.hasMany(models.productLocationShuffling, {
+        foreignKey: "productId",
+        as: "productLocationShuffling",
+        sourceKey: "productId",
+      });
     }
   }
   productDetails.init(

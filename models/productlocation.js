@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "productDetails",
         targetKey: "productId",
       });
+      productLocation.hasMany(models.productLocationShuffling, {
+        foreignKey: "locationId",
+        as: "productLocationShuffling",
+        sourceKey: "locationId",
+      });
     }
   }
   productLocation.init(
