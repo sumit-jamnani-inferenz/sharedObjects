@@ -50,6 +50,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "productLocationShuffling",
+      tableName: "productLocationShuffling",
     }
   );
   return productLocationShuffling;
