@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       productLocationShuffling.belongsTo(models.productDetails, {
         foreignKey: "productId",
-        as: "productDetils",
+        as: "productDetails",
         targetKey: "productId",
       });
       productLocationShuffling.belongsTo(models.productVariants, {
