@@ -1,22 +1,22 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class userCart extends Model {
+  class cartItems extends Model {
     static associate(models) {
-      userCart.belongsTo(models.userAccounts, {
+      cartItems.belongsTo(models.userAccounts, {
         foreignKey: "accountId",
         as: "user",
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
-      userCart.belongsTo(models.productDetails, {
+      cartItems.belongsTo(models.productDetails, {
         foreignKey: "productId",
         as: "productDetails",
         targetKey: "productId",
       });
     }
   }
-  userCart.init(
+  cartItems.init(
     {
       cartItemId: {
         allowNull: false,
@@ -42,9 +42,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "userCart",
-      tableName: "userCart",
+      modelName: "cartItems",
+      tableName: "cartItems",
     }
   );
-  return userCart;
+  return cartItems;
 };

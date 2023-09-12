@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("userCart", {
+    await queryInterface.createTable("cartItems", {
       cartItemId: {
         allowNull: false,
         type: Sequelize.UUID,
@@ -45,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("userCart");
+    await queryInterface.dropTable("cartItems");
   },
 };
