@@ -2,21 +2,22 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("cartItems", {
+    await queryInterface.createTable("userCart", {
       cartItemId: {
         allowNull: false,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
       },
-      cartId: {
+      accountId: {
         type: Sequelize.UUID,
         references: {
-          model: "userCart",
-          key: "cartId",
+          model: "userAccounts",
+          key: "accountId",
         },
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
+        allowNull: false,
       },
       productId: {
         type: Sequelize.UUID,
@@ -24,6 +25,7 @@ module.exports = {
           model: "productDetails",
           key: "productId",
         },
+        allowNull: false,
       },
       quantity: {
         type: Sequelize.INTEGER,
@@ -43,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("cartItems");
+    await queryInterface.dropTable("userCart");
   },
 };

@@ -9,16 +9,16 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
-      userCart.hasMany(models.cartItems, {
-        foreignKey: "cartId",
-        as: "cartItems",
-        sourceKey: "cartId",
+      userCart.belongsTo(models.productDetails, {
+        foreignKey: "productId",
+        as: "productDetails",
+        targetKey: "productId",
       });
     }
   }
   userCart.init(
     {
-      cartId: {
+      cartItemId: {
         allowNull: false,
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -26,6 +26,14 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountId: {
         type: DataTypes.UUID,
+        allowNull: false,
+      },
+      productId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+      },
+      quantity: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       misc: {
