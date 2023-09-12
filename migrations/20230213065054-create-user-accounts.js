@@ -15,6 +15,7 @@ module.exports = {
           model: "roles",
           key: "roleId",
         },
+        allowNull: false,
       },
       mappedUserId: {
         type: Sequelize.UUID,
@@ -25,7 +26,6 @@ module.exports = {
       },
       accountUserName: {
         type: Sequelize.TEXT,
-        allowNull: false,
       },
       accountName: {
         type: Sequelize.TEXT,

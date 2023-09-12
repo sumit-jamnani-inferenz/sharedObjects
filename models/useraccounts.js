@@ -95,6 +95,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       roleId: {
         type: DataTypes.UUID,
+        allowNull: false,
       },
       mappedUserId: {
         type: DataTypes.UUID,
@@ -105,7 +106,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       accountUserName: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       accountName: {
         type: DataTypes.TEXT,
