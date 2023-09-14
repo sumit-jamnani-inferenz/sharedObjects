@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         as: "userWishlists",
         sourceKey: "accountId",
       });
-      userAccounts.hasOne(models.cartItems, {
+      userAccounts.hasMany(models.cartItems, {
         foreignKey: "accountId",
         as: "cartItems",
         sourceKey: "accountId",
