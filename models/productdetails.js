@@ -58,6 +58,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "cartItems",
         sourceKey: "productId",
       });
+      productDetails.hasMany(models.archivedCartItems, {
+        foreignKey: "productId",
+        as: "archivedCartItems",
+        sourceKey: "productId",
+      });
       productDetails.hasMany(models.orderItems, {
         foreignKey: "productId",
         as: "orderItems",

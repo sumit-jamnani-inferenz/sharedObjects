@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "productDetails",
         targetKey: "productId",
       });
+      cartItems.belongsTo(models.productVariants, {
+        foreignKey: "variantId",
+        as: "productVariants",
+        targetKey: "variantId",
+      });
     }
   }
   cartItems.init(
@@ -31,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
       productId: {
         type: DataTypes.UUID,
         allowNull: false,
+      },
+      variantId: {
+        type: DataTypes.UUID,
       },
       quantity: {
         type: DataTypes.INTEGER,

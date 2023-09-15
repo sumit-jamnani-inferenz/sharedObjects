@@ -27,6 +27,13 @@ module.exports = {
         },
         allowNull: false,
       },
+      variantId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "productVariants",
+          key: "variantId",
+        },
+      },
       quantity: {
         type: Sequelize.INTEGER,
         allowNull: false,

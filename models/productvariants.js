@@ -24,6 +24,16 @@ module.exports = (sequelize, DataTypes) => {
         as: "productLocationShuffling",
         sourceKey: "variantId",
       });
+      productVariants.hasMany(models.cartItems, {
+        foreignKey: "variantId",
+        as: "cartItems",
+        sourceKey: "variantId",
+      });
+      productVariants.hasMany(models.archivedCartItems, {
+        foreignKey: "variantId",
+        as: "archivedCartItems",
+        sourceKey: "variantId",
+      });
     }
   }
   productVariants.init(
