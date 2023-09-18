@@ -40,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "storeDisplay",
         sourceKey: "brandId",
       });
+      brand.hasMany(models.mediaDisplay, {
+        foreignKey: "brandId",
+        as: "mediaDisplay",
+        sourceKey: "brandId",
+      });
       brand.hasMany(models.orderItems, {
         foreignKey: "brandId",
         as: "orderItems",
