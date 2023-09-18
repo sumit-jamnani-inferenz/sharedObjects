@@ -48,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "mediaDisplay",
+      tableName: "mediaDisplay",
     }
   );
   return mediaDisplay;
