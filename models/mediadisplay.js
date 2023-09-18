@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      imageURL: {
+      displayImage: {
         type: DataTypes.TEXT,
       },
       mediaURL: {

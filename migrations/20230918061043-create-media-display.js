@@ -27,7 +27,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      imageURL: {
+      displayImage: {
         type: Sequelize.TEXT,
       },
       mediaURL: {
