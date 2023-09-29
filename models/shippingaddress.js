@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       shippingAddress.belongsTo(models.adminAccounts, {
         foreignKey: "accountId",
-        as: "user",
+        as: "adminAccount",
         targetKey: "adminAccountId",
         onDelete: "CASCADE",
       });
