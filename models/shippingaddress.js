@@ -5,16 +5,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       shippingAddress.belongsTo(models.userAccounts, {
         foreignKey: "accountId",
-        as: "user",
+        as: "account",
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
+
       shippingAddress.belongsTo(models.adminAccounts, {
         foreignKey: "accountId",
-        as: "adminAccount",
+        as: "account", // Use the same alias for both associations
         targetKey: "adminAccountId",
         onDelete: "CASCADE",
       });
+
       shippingAddress.hasMany(models.consumerOrders, {
         foreignKey: "shippingAddressId",
         as: "consumerOrders",
