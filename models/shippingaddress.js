@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "accountId",
         onDelete: "CASCADE",
       });
+      shippingAddress.belongsTo(models.adminAccounts, {
+        foreignKey: "accountId",
+        as: "user",
+        targetKey: "adminAccountId",
+        onDelete: "CASCADE",
+      });
       shippingAddress.hasMany(models.consumerOrders, {
         foreignKey: "shippingAddressId",
         as: "consumerOrders",

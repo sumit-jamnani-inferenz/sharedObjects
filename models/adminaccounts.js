@@ -8,12 +8,91 @@ module.exports = (sequelize, DataTypes) => {
         as: "role",
         targetKey: "roleId",
       });
-
       adminAccounts.belongsTo(models.brand, {
         foreignKey: "brandId",
         as: "brand",
         targetKey: "brandId",
       });
+      adminAccounts.hasMany(models.shippingAddress, {
+        foreignKey: "accountId",
+        as: "shippingAddress",
+        sourceKey: "adminAccountId",
+      });
+      // userAccounts.hasMany(models.userActivity, {
+      //   foreignKey: "accountId",
+      //   as: "userActivity",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.productsPair, {
+      //   foreignKey: "accountId",
+      //   as: "productsPair",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.userAnswers, {
+      //   foreignKey: "accountId",
+      //   as: "userAnswer",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.userChoices, {
+      //   foreignKey: "accountId",
+      //   as: "userChoice",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasOne(models.userPreferences, {
+      //   foreignKey: "accountId",
+      //   as: "userPreferences",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasOne(models.userAvatars, {
+      //   foreignKey: "accountId",
+      //   as: "userAvatars",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.userWishlists, {
+      //   foreignKey: "accountId",
+      //   as: "userWishlists",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.cartItems, {
+      //   foreignKey: "accountId",
+      //   as: "cartItems",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.archivedCartItems, {
+      //   foreignKey: "accountId",
+      //   as: "archivedCartItems",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.consumerOrders, {
+      //   foreignKey: "accountId",
+      //   as: "consumerOrders",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.userLobby, {
+      //   foreignKey: "accountId",
+      //   as: "userLobby",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.lobbyInfo, {
+      //   foreignKey: "accountId",
+      //   as: "lobbyInfo",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.productReviews, {
+      //   foreignKey: "accountId",
+      //   as: "productReviews",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.productViews, {
+      //   foreignKey: "accountId",
+      //   as: "productViews",
+      //   sourceKey: "accountId",
+      // });
+      // userAccounts.hasMany(models.returnReplacementOrders, {
+      //   foreignKey: "accountId",
+      //   as: "returnReplacementOrders",
+      //   sourceKey: "accountId",
+      // });
     }
   }
   adminAccounts.init(
