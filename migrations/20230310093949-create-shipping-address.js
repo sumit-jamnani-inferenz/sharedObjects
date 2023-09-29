@@ -53,6 +53,9 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
+      recodType: {
+        type: Sequelize.TEXT,
+      },
       misc: { type: Sequelize.JSON },
       createdAt: {
         allowNull: false,

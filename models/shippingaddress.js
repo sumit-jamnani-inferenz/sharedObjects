@@ -69,6 +69,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      recodType: {
+        type: DataTypes.TEXT,
+      },
       misc: { type: DataTypes.JSON },
     },
     {
