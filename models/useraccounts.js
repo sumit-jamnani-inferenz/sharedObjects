@@ -8,6 +8,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "role",
         targetKey: "roleId",
       });
+      userAccounts.belongsTo(models.brand, {
+        foreignKey: "brandId",
+        as: "brand",
+        targetKey: "brandId",
+      });
       userAccounts.hasMany(models.shippingAddress, {
         foreignKey: "accountId",
         as: "shippingAddress",
@@ -108,6 +113,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       rzp_customerId: {
         type: DataTypes.TEXT,
+      },
+      brandId: {
+        type: DataTypes.UUID,
       },
       accountUserName: {
         type: DataTypes.TEXT,

@@ -14,7 +14,6 @@ module.exports = {
         references: {
           model: "userAccounts",
           key: "accountId",
-          name: "shippingAddress_accountId_fkey",
         },
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
@@ -54,9 +53,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      recodType: {
-        type: Sequelize.TEXT,
-      },
       misc: { type: Sequelize.JSON },
       createdAt: {
         allowNull: false,
@@ -67,20 +63,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
-
-    await queryInterface.addConstraint("shippingAddress", {
-      type: "foreign key",
-      name: "FK_ShippingAddress_AdminAccount",
-      fields: ["accountId"],
-      references: {
-        table: "adminAccounts",
-        field: "adminAccountId",
-      },
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE",
-    });
   },
-
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("shippingAddress");
   },

@@ -23,13 +23,13 @@ module.exports = {
       rzp_customerId: {
         type: Sequelize.TEXT,
       },
-      brandId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "brand",
-          key: "brandId",
-        },
-      },
+      // brandId: {
+      //   type: Sequelize.UUID,
+      //   references: {
+      //     model: "brand",
+      //     key: "brandId",
+      //   },
+      // },
       accountName: {
         type: Sequelize.TEXT,
         allowNull: false,
