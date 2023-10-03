@@ -11,7 +11,13 @@ module.exports = {
       },
       accountId: {
         type: Sequelize.UUID,
-        allowNull: false,
+        references: {
+          model: "userAccounts",
+          key: "accountId",
+          name: "shippingAddress_accountId_fkey",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       recipientName: {
         type: Sequelize.TEXT,
@@ -62,23 +68,10 @@ module.exports = {
       },
     });
 
-    // Add foreign keys for both userAccounts and adminAccounts
     await queryInterface.addConstraint("shippingAddress", {
       type: "foreign key",
+      name: "FK_ShippingAddress_AdminAccount",
       fields: ["accountId"],
-      name: "shippingAddress_userAccountId_fkey",
-      references: {
-        table: "userAccounts",
-        field: "accountId",
-      },
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE",
-    });
-
-    await queryInterface.addConstraint("shippingAddress", {
-      type: "foreign key",
-      fields: ["accountId"],
-      name: "shippingAddress_adminAccountId_fkey",
       references: {
         table: "adminAccounts",
         field: "adminAccountId",
@@ -87,6 +80,7 @@ module.exports = {
       onUpdate: "CASCADE",
     });
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("shippingAddress");
   },
