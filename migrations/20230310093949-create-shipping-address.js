@@ -11,21 +11,7 @@ module.exports = {
       },
       accountId: {
         type: Sequelize.UUID,
-        references: {
-          model: "userAccounts",
-          key: "accountId",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
-      },
-      accountId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "adminAccounts",
-          key: "adminAccountId",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
+        allowNull: false,
       },
       recipientName: {
         type: Sequelize.TEXT,
@@ -74,6 +60,31 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+    });
+
+    // Add foreign keys for both userAccounts and adminAccounts
+    await queryInterface.addConstraint("shippingAddress", {
+      type: "foreign key",
+      fields: ["accountId"],
+      name: "shippingAddress_userAccountId_fkey",
+      references: {
+        table: "userAccounts",
+        field: "accountId",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
+    });
+
+    await queryInterface.addConstraint("shippingAddress", {
+      type: "foreign key",
+      fields: ["accountId"],
+      name: "shippingAddress_adminAccountId_fkey",
+      references: {
+        table: "adminAccounts",
+        field: "adminAccountId",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     });
   },
   async down(queryInterface, Sequelize) {
