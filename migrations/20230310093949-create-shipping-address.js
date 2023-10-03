@@ -18,6 +18,15 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      accountId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "adminAccounts",
+          key: "adminAccountId",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
       recipientName: {
         type: Sequelize.TEXT,
         allowNull: false,
