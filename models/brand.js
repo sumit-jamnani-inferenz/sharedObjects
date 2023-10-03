@@ -15,11 +15,6 @@ module.exports = (sequelize, DataTypes) => {
         as: "products",
         sourceKey: "brandId",
       });
-      // brand.hasMany(models.adminAccounts, {
-      //   foreignKey: "brandId",
-      //   as: "users",
-      //   sourceKey: "brandId",
-      // });
       brand.hasMany(models.userAccounts, {
         foreignKey: "brandId",
         as: "users",
