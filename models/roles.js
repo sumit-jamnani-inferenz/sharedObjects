@@ -8,11 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         as: "users",
         sourceKey: "roleId",
       });
-      roles.hasMany(models.adminAccounts, {
-        foreignKey: "roleId",
-        as: "adminUsers",
-        sourceKey: "roleId",
-      });
       roles.hasMany(models.rolePolicyMapping, {
         foreignKey: "roleId",
         as: "rolePolicyMapping",
