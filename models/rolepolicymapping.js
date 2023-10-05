@@ -31,6 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
       },
+      roleType: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      policyType: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
       misc: DataTypes.JSON,
     },
     {

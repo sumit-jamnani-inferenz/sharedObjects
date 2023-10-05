@@ -25,6 +25,14 @@ module.exports = {
         },
         allowNull: false,
       },
+      roleType: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      policyType: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
