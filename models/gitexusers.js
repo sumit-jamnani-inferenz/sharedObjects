@@ -30,7 +30,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       company: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
       misc: {
         type: DataTypes.JSON,
