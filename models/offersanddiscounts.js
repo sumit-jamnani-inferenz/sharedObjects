@@ -12,11 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         through: "ProductDiscountsMapping",
         foreignKey: "promotionId",
       });
-      // offersAndDiscounts.hasMany(models.productDiscountsMapping, {
-      //   foreignKey: "promotionId",
-      //   as: "productDiscountsMapping",
-      //   sourceKey: "promotionId",
-      // });
     }
   }
   offersAndDiscounts.init(
