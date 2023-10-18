@@ -13,11 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         through: "offersAndDiscounts",
         foreignKey: "variantId",
       });
-      // productVariants.hasMany(models.productDiscountsMapping, {
-      //   foreignKey: "variantId",
-      //   as: "offersAndDiscounts",
-      //   sourceKey: "variantId",
-      // });
+      
       productVariants.hasMany(models.orderItems, {
         foreignKey: "variantId",
         as: "orderItems",
