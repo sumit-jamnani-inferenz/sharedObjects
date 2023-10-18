@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: "CASCADE",
       });
       productVariants.belongsToMany(models.offersAndDiscounts, {
-        through: "offersAndDiscounts",
+        through: models.productDiscountsMapping,
         foreignKey: "variantId",
         as: "variantOffersAndDiscounts",
       });
