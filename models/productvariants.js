@@ -9,6 +9,15 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "productSKU",
         onDelete: "CASCADE",
       });
+      productVariants.belongsToMany(models.offersAndDiscounts, {
+        through: "offersAndDiscounts",
+        foreignKey: "variantId",
+      });
+      // productVariants.hasMany(models.productDiscountsMapping, {
+      //   foreignKey: "variantId",
+      //   as: "offersAndDiscounts",
+      //   sourceKey: "variantId",
+      // });
       productVariants.hasMany(models.orderItems, {
         foreignKey: "variantId",
         as: "orderItems",

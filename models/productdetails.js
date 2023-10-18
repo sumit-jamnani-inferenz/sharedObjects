@@ -18,11 +18,15 @@ module.exports = (sequelize, DataTypes) => {
         as: "subCategory",
         targetKey: "productSubCategoryId",
       });
-      productDetails.belongsTo(models.productDiscount, {
-        foreignKey: "discountId",
-        as: "discount",
-        targetKey: "discountId",
+      productDetails.belongsToMany(models.offersAndDiscounts, {
+        through: "offersAndDiscounts",
+        foreignKey: "productId",
       });
+      // productDetails.hasMany(models.productDiscountsMapping, {
+      //   foreignKey: "productId",
+      //   as: "offersAndDiscounts",
+      //   sourceKey: "productId",
+      // });
       productDetails.hasMany(models.productVariants, {
         foreignKey: "productSKU",
         as: "variants",

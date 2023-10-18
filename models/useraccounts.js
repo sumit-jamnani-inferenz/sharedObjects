@@ -63,6 +63,11 @@ module.exports = (sequelize, DataTypes) => {
         as: "archivedCartItems",
         sourceKey: "accountId",
       });
+      userAccounts.hasMany(models.rewardsHistory, {
+        foreignKey: "accountId",
+        as: "rewards",
+        sourceKey: "accountId",
+      });
       userAccounts.hasMany(models.consumerOrders, {
         foreignKey: "accountId",
         as: "consumerOrders",
@@ -138,6 +143,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       thumbnailImage: {
         type: DataTypes.TEXT,
+      },
+      superCoinsBalance: {
+        type: DataTypes.INTEGER,
       },
       isLoggedIn: {
         type: DataTypes.BOOLEAN,

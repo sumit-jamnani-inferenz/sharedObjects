@@ -2,27 +2,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("userAccounts", {
-      accountId: {
+    await queryInterface.createTable("offersAndDiscounts", {
+      promotionId: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-      },
-      roleId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "roles",
-          key: "roleId",
-        },
-        allowNull: false,
-      },
-      mappedUserId: {
-        type: Sequelize.UUID,
-        allowNull: false,
-      },
-      rzp_customerId: {
-        type: Sequelize.TEXT,
       },
       brandId: {
         type: Sequelize.UUID,
@@ -31,44 +16,58 @@ module.exports = {
           key: "brandId",
         },
       },
-      accountUserName: {
-        type: Sequelize.TEXT,
-      },
-      accountName: {
-        type: Sequelize.TEXT,
-      },
-      accountEmail: {
+      promotionName: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      accountContact: {
+      promotionDescription: {
         type: Sequelize.TEXT,
       },
-      accountWallet: {
+      promotionType: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      promotionCategory: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      promotionValue: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+      },
+      minOrderValue: {
+        type: Sequelize.FLOAT,
+      },
+      eligibleBank: {
         type: Sequelize.TEXT,
       },
-      profileImage: {
+      cardType: {
         type: Sequelize.TEXT,
+      },
+      startDate: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      endDate: {
+        type: Sequelize.DATE,
+      },
+      applicableDays: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
       },
       thumbnailImage: {
         type: Sequelize.TEXT,
       },
-      superCoinsBalance: {
-        type: Sequelize.INTEGER,
-      },
-      isLoggedIn: {
-        type: Sequelize.BOOLEAN,
+      offeredBy: {
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
-      signUpSource: {
-        type: Sequelize.TEXT,
-        allowNull: false,
+      misc: {
+        type: Sequelize.JSON,
       },
-      misc: Sequelize.JSON,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -80,6 +79,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("userAccounts");
+    await queryInterface.dropTable("offersAndDiscounts");
   },
 };

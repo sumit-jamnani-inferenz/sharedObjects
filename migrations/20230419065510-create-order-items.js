@@ -42,13 +42,6 @@ module.exports = {
           key: "variantId",
         },
       },
-      discountId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "productDiscount",
-          key: "discountId",
-        },
-      },
       productPrice: {
         type: Sequelize.FLOAT,
         allowNull: false,

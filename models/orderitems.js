@@ -24,10 +24,15 @@ module.exports = (sequelize, DataTypes) => {
         as: "productVariants",
         targetKey: "variantId",
       });
-      orderItems.belongsTo(models.productDiscount, {
-        foreignKey: "discountId",
-        as: "discount",
-        targetKey: "discountId",
+      orderItems.hasMany(models.offersAndDiscountsApplied, {
+        foreignKey: "orderItemId",
+        as: "offersAndDiscountsApplied",
+        sourceKey: "orderItemId",
+      });
+      orderItems.hasMany(models.rewardsHistory, {
+        foreignKey: "orderItemId",
+        as: "rewards",
+        sourceKey: "orderItemId",
       });
       orderItems.hasMany(models.returnReplacementOrders, {
         foreignKey: "orderItemId",
@@ -67,9 +72,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       variantId: {
-        type: DataTypes.UUID,
-      },
-      discountId: {
         type: DataTypes.UUID,
       },
       productPrice: {
