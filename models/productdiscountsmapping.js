@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       productDiscountsMapping.belongsTo(models.offersAndDiscounts, {
         foreignKey: "promotionId",
-        as: "offersAndDiscounts",
+        as: "offersAndDiscountsDetails",
         targetKey: "promotionId",
       });
     }
