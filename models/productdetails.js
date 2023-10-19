@@ -19,7 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "productSubCategoryId",
       });
       productDetails.belongsToMany(models.offersAndDiscounts, {
-        through: models.productDiscountsMapping,
+        through: {
+          model: models.productDiscountsMapping,
+          attributes: [],
+        },
         foreignKey: "productId",
         otherKey: "promotionId",
         as: "productOffersAndDiscounts",
