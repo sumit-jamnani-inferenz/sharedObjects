@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       });
       offersAndDiscounts.belongsToMany(models.productDetails, {
         through: models.productDiscountsMapping,
+        foreignKey: "promotionId",
+        otherKey: "productId",
         as: "offeredProducts",
       });
     }
