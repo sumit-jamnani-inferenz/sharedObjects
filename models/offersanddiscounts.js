@@ -5,12 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       offersAndDiscounts.belongsTo(models.brand, {
         foreignKey: "brandId",
-        as: "brand",
         targetKey: "brandId",
+        as: "brand",
       });
       offersAndDiscounts.belongsToMany(models.productDetails, {
         through: models.productDiscountsMapping,
-        foreignKey: "productId",
+        foreignKey: "offerId",
         as: "offeredProducts",
       });
     }
