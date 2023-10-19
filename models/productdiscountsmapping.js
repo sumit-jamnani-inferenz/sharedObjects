@@ -6,17 +6,14 @@ module.exports = (sequelize, DataTypes) => {
       productDiscountsMapping.belongsTo(models.productDetails, {
         foreignKey: "productId",
         as: "productDetails",
-        targetKey: "productId",
       });
       productDiscountsMapping.belongsTo(models.productVariants, {
         foreignKey: "variantId",
         as: "productVariants",
-        targetKey: "variantId",
       });
       productDiscountsMapping.belongsTo(models.offersAndDiscounts, {
         foreignKey: "promotionId",
         as: "offersAndDiscountsDetails",
-        targetKey: "promotionId",
       });
     }
   }
