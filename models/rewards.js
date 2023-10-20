@@ -42,6 +42,9 @@ module.exports = (sequelize, DataTypes) => {
       rewarEndDate: {
         type: DataTypes.DATE,
       },
+      thumbnailImage: {
+        type: DataTypes.TEXT,
+      },
       offeredBy: {
         type: DataTypes.TEXT,
         allowNull: false,

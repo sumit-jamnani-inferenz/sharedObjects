@@ -37,6 +37,9 @@ module.exports = {
       rewarEndDate: {
         type: Sequelize.DATE,
       },
+      thumbnailImage: {
+        type: Sequelize.TEXT,
+      },
       offeredBy: {
         type: Sequelize.TEXT,
         allowNull: false,
