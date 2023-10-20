@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      rewarEndDate: {
+      rewardEndDate: {
         type: Sequelize.DATE,
       },
       thumbnailImage: {

@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      rewarEndDate: {
+      rewardEndDate: {
         type: DataTypes.DATE,
       },
       thumbnailImage: {
