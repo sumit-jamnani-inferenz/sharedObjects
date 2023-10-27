@@ -57,6 +57,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      variantSKU: {
+        type: DataTypes.TEXT,
+      },
       variantValue: {
         type: DataTypes.JSONB,
         allowNull: false,

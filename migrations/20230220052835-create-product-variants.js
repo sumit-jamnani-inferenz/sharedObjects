@@ -19,6 +19,9 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      variantSKU: {
+        type: Sequelize.TEXT,
+      },
       variantValue: {
         type: Sequelize.JSONB,
         allowNull: false,
