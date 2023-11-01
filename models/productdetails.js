@@ -132,9 +132,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
       },
-      discountId: {
-        type: DataTypes.UUID,
-      },
       productCategoryId: {
         type: DataTypes.UUID,
         allowNull: false,

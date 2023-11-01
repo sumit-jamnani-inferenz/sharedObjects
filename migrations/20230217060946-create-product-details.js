@@ -24,14 +24,6 @@ module.exports = {
           key: "brandId",
         },
       },
-      discountId: {
-        type: Sequelize.UUID,
-        allowNull: true,
-        references: {
-          model: "productDiscount",
-          key: "discountId",
-        },
-      },
       productCategoryId: {
         type: Sequelize.UUID,
         allowNull: false,
