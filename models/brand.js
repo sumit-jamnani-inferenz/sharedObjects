@@ -5,11 +5,6 @@ const sequelize = require("../config/db/dbConfig");
 module.exports = (sequelize, DataTypes) => {
   class brand extends Model {
     static associate(models) {
-      brand.hasMany(models.productDiscount, {
-        foreignKey: "brandId",
-        as: "discounts",
-        sourceKey: "brandId",
-      });
       brand.hasMany(models.productDetails, {
         foreignKey: "brandId",
         as: "products",
