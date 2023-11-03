@@ -98,6 +98,16 @@ module.exports = (sequelize, DataTypes) => {
         as: "returnReplacementOrders",
         sourceKey: "accountId",
       });
+      userAccounts.hasMany(models.annotations, {
+        foreignKey: "accountId",
+        as: "annotations",
+        sourceKey: "accountId",
+      });
+      userAccounts.hasMany(models.skippedAnnotations, {
+        foreignKey: "accountId",
+        as: "skippedAnnotations",
+        sourceKey: "accountId",
+      });
     }
   }
   userAccounts.init(
