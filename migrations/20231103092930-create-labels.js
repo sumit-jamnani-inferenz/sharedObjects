@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      defaultLabels: {
+      defaultLabel: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

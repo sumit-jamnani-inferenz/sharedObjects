@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      defaultLabels: {
+      defaultLabel: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
