@@ -42,7 +42,7 @@ module.exports = {
         allowNull: false,
       },
       annotationValues: {
-        type: Sequelize.TEXT,
+        type: Sequelize.JSON,
         allowNull: false,
       },
       misc: {
